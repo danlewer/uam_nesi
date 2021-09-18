@@ -1,0 +1,309 @@
+year,md,lower,upper,region
+1994,13,8,19,East Midlands
+1995,8,3,12,East Midlands
+1996,6,3,15,East Midlands
+1997,4,2,9,East Midlands
+1998,6,3,10,East Midlands
+1999,4,2,8,East Midlands
+2000,6,2,11.25,East Midlands
+2001,4,2,10,East Midlands
+2002,8,4,14,East Midlands
+2003,6,3,10,East Midlands
+2004,7,4,10,East Midlands
+2005,7,4,11,East Midlands
+2006,7,4,12,East Midlands
+2007,7,4,11,East Midlands
+2008,9,5,13,East Midlands
+2009,9,5,13,East Midlands
+2010,11,6,14,East Midlands
+2011,11,6,14.5,East Midlands
+2012,11,6,17,East Midlands
+2013,14,9.25,19,East Midlands
+2014,14,7,20,East Midlands
+2015,14.5,8,20,East Midlands
+2016,16,11,20,East Midlands
+2017,16.5,10,22,East Midlands
+2018,16,9,22,East Midlands
+2019,17,10,22,East Midlands
+1993,11,6.75,14.25,East of England
+1994,12,8,17.5,East of England
+1995,12,7,17,East of England
+1996,7,4,14,East of England
+1997,9,5,13.25,East of England
+1998,9,4,16,East of England
+1999,8,3,15,East of England
+2000,8.5,3,14,East of England
+2001,8,4,15.25,East of England
+2002,7,3,15.75,East of England
+2003,7,3,12,East of England
+2004,9,5,15,East of England
+2005,10,6,16,East of England
+2006,10,4,15,East of England
+2007,8,3.5,13.5,East of England
+2008,9,3,15,East of England
+2009,11,5,19,East of England
+2010,10,3,16,East of England
+2011,12,4,17,East of England
+2012,14,5.25,19,East of England
+2013,12,5.75,19,East of England
+2014,11,4,20,East of England
+2015,13,7,19,East of England
+2016,12,5,19,East of England
+2017,13,7,20,East of England
+2018,15,7,21,East of England
+2019,16,6,22,East of England
+1993,9,4,14,London
+1994,9,4,14,London
+1995,9,5,14,London
+1996,9,4,14,London
+1997,10,4,16,London
+1998,11,5,16,London
+1999,9,4,16,London
+2000,11,4.25,16,London
+2001,11,5,17.5,London
+2002,12,6.75,19,London
+2003,11,5,18.75,London
+2004,12,5,20,London
+2005,13,6,20,London
+2006,13,6,21,London
+2007,13,7,20,London
+2008,12,5,20,London
+2009,14,6.5,20.5,London
+2010,14,6,21,London
+2011,14,6.75,22.25,London
+2012,12,6,20,London
+2013,16,8,21,London
+2014,16,8,25,London
+2015,17,9,26,London
+2016,20,12,27,London
+2017,19,12.25,26,London
+2018,18,7,26,London
+2019,18,7,25,London
+1993,6,3.25,8.25,North East
+1994,2,0.75,5.5,North East
+1995,3,1,7.75,North East
+1996,3,1,6,North East
+1997,2,1,4,North East
+1998,3,1,5.75,North East
+1999,2,1,5,North East
+2000,2,1,5,North East
+2001,3,2,6,North East
+2002,5,2,9,North East
+2003,5,2,7,North East
+2004,5,2,8,North East
+2005,5,3,8.5,North East
+2006,5,3,9,North East
+2007,7,3,11,North East
+2008,7,4,11,North East
+2009,7,3,10,North East
+2010,10,4,13,North East
+2011,9,5,14,North East
+2012,8,3,13,North East
+2013,12,7,16,North East
+2014,11,7,16.25,North East
+2015,14,10,18,North East
+2016,13,7,18,North East
+2017,14,6.5,19,North East
+2018,13.5,6,20,North East
+2019,15,5,22.75,North East
+1993,5,2,9,North West
+1994,6,2,10,North West
+1995,6,3,11,North West
+1996,6,3,11,North West
+1997,7,3,11,North West
+1998,8,3,12,North West
+1999,9,4,13,North West
+2000,8,4,13,North West
+2001,9,4,15,North West
+2002,10,5,15.75,North West
+2003,10,5,16,North West
+2004,10,5,15.75,North West
+2005,10,5,16,North West
+2006,11,6,16,North West
+2007,11,6,16,North West
+2008,13,6,18,North West
+2009,14,8,19,North West
+2010,13,8,20,North West
+2011,14,8,20,North West
+2012,13,6,19,North West
+2013,15,6.25,21,North West
+2014,16,10,22,North West
+2015,16,8,23,North West
+2016,18,9,24,North West
+2017,18,9,24,North West
+2018,19,11,25,North West
+2019,18,9,24,North West
+2002,5,4,6,Northern Ireland
+2003,5,3,10.25,Northern Ireland
+2004,7,5,12,Northern Ireland
+2005,6,4,10,Northern Ireland
+2006,8,5,11,Northern Ireland
+2007,8,5.5,10.5,Northern Ireland
+2008,10,5,12,Northern Ireland
+2009,10,4.25,12,Northern Ireland
+2010,12,5,16,Northern Ireland
+2011,9,4,14,Northern Ireland
+2012,8,3.75,14,Northern Ireland
+2013,8,4,15.5,Northern Ireland
+2014,8,3,14.25,Northern Ireland
+2015,8,3,14.5,Northern Ireland
+2016,11.5,4,16,Northern Ireland
+2017,14,7.5,16.5,Northern Ireland
+2018,9,3,15,Northern Ireland
+2019,10,3,17,Northern Ireland
+1993,7,2,12,South East
+1994,7,2,12,South East
+1995,6,2,12,South East
+1996,4,1,10,South East
+1997,4,1,11,South East
+1998,3,2,11,South East
+1999,4,2,12,South East
+2000,5,2,12,South East
+2001,5,2,10,South East
+2002,6,3,10,South East
+2003,6,4,13,South East
+2004,8,4,15.5,South East
+2005,9,4,16,South East
+2006,10,5,15,South East
+2007,9,3,14,South East
+2008,10,4,16,South East
+2009,10,5,16.25,South East
+2010,11,5,16,South East
+2011,12,6,17,South East
+2012,13,5,18.5,South East
+2013,12,6,20,South East
+2014,14,6,21,South East
+2015,14,5,21,South East
+2016,15,8,21,South East
+2017,16,8,22,South East
+2018,16,8,21,South East
+2019,13,5,21,South East
+1993,7,3,13,South West
+1994,7,3,12,South West
+1995,8,3,13,South West
+1996,8,2,13.25,South West
+1997,5,2,11,South West
+1998,5,2,13,South West
+1999,5,2,11,South West
+2000,6,3,12,South West
+2001,6,3,11,South West
+2002,7,3,13,South West
+2003,8,4,14,South West
+2004,7,4,13,South West
+2005,8,4,13,South West
+2006,9,4,15,South West
+2007,9,4,13,South West
+2008,9,5,14,South West
+2009,10,5,15,South West
+2010,11,4,17,South West
+2011,11,4,16,South West
+2012,10,4,16,South West
+2013,13,6,18,South West
+2014,14,6,19,South West
+2015,14,7,21,South West
+2016,16,8,21,South West
+2017,17,7,21.5,South West
+2018,17.5,10,23.25,South West
+2019,18,9.25,25,South West
+1993,7,2,14,Wales
+1994,9,2.25,14,Wales
+1995,9,3.5,14.5,Wales
+1996,9,6,10.5,Wales
+1997,3,1,9.5,Wales
+1998,4,2,9,Wales
+1999,6,3,15,Wales
+2000,7,2,13,Wales
+2001,5,3,9,Wales
+2002,6,3,9,Wales
+2003,5.5,2,10.25,Wales
+2004,10,6,14,Wales
+2005,7,3,12,Wales
+2006,9,4.5,13,Wales
+2007,8,4,13,Wales
+2008,10,4.5,15,Wales
+2009,9,3,16.75,Wales
+2010,8,2,15,Wales
+2011,13,7,17,Wales
+2012,10,5,18,Wales
+2013,13,6,19,Wales
+2014,14,7,21,Wales
+2015,13,7,21,Wales
+2016,14,8,21.5,Wales
+2017,15.5,8.25,21.75,Wales
+2018,16,9,24,Wales
+2019,16,9,23,Wales
+1993,9,5,15,West Midlands
+1994,5.5,4,10.75,West Midlands
+1995,13,7,18,West Midlands
+1996,6,3,13,West Midlands
+1997,6,2,12.75,West Midlands
+1998,6,3,12.75,West Midlands
+1999,5,2,10.5,West Midlands
+2000,6,2,11,West Midlands
+2001,7,4,13,West Midlands
+2002,4,2,9,West Midlands
+2003,5,2,11,West Midlands
+2004,9,6.25,9.75,West Midlands
+2005,5.5,2,7,West Midlands
+2006,4,2,7,West Midlands
+2007,7,4,12.25,West Midlands
+2008,7,3,11,West Midlands
+2009,7,3,13,West Midlands
+2010,9,3,15,West Midlands
+2011,10,4,15,West Midlands
+2012,12,6,18,West Midlands
+2013,12,6,18,West Midlands
+2014,12,5,17,West Midlands
+2015,13,5,19,West Midlands
+2016,13,6,19,West Midlands
+2017,13,5,19.25,West Midlands
+2018,12,5,19,West Midlands
+2019,17,8,22,West Midlands
+1993,4.5,2.25,9.75,Yorkshire & Humber
+1994,5,2,12,Yorkshire & Humber
+2001,7,3.5,12,Yorkshire & Humber
+2002,6.5,2.25,11,Yorkshire & Humber
+2003,7,4,12.5,Yorkshire & Humber
+2004,7,4,12.5,Yorkshire & Humber
+2005,7,3.5,12.5,Yorkshire & Humber
+2006,9,6,14.75,Yorkshire & Humber
+2007,10,6,14,Yorkshire & Humber
+2008,10,6,17,Yorkshire & Humber
+2009,10.5,5,15,Yorkshire & Humber
+2010,13,8,17,Yorkshire & Humber
+2011,14,9,19,Yorkshire & Humber
+2012,12.5,6.75,18,Yorkshire & Humber
+2013,15,8,19,Yorkshire & Humber
+2014,16,9.25,21,Yorkshire & Humber
+2015,16,11.5,20,Yorkshire & Humber
+2016,18,12,23,Yorkshire & Humber
+2017,19,11,23,Yorkshire & Humber
+2018,18,11,23,Yorkshire & Humber
+2019,19,11,24,Yorkshire & Humber
+1993,6,2,12,England
+1994,7,3,12,England
+1995,7,3,12,England
+1996,6,3,12,England
+1997,6,2,12,England
+1998,6,2,13,England
+1999,6,2,12,England
+2000,6,2,12,England
+2001,6,3,13,England
+2002,8,4,14,England
+2003,7,4,14,England
+2004,8,4,14,England
+2005,8,4,15,England
+2006,9,4,15,England
+2007,9,4,14,England
+2008,9,4,15,England
+2009,10,5,16,England
+2010,11,5,16,England
+2011,12,6,17,England
+2012,11,5,17.75,England
+2013,13,6,19,England
+2014,14,7,20,England
+2015,14,7,21,England
+2016,15,8,21,England
+2017,16,8,22,England
+2018,16,8,23,England
+2019,17,8,23,England
