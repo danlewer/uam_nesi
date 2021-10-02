@@ -5,8 +5,6 @@
 # 4. Estimates modelled quantiles
 # 5. Estimates pairwise ratios for modelling of number injecting for the first time each year
 
-setwd("//freddy/dept/PHIBCS/PHI/SHPN-PA/01 SHBBV/Surveillance/NESI/03 Data/Dan")
-
 # -- libraries --
 
 library(data.table) # for reading and manipulating data
