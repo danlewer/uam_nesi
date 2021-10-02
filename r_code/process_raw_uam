@@ -7,8 +7,6 @@
 # 6. Estimates modelled quantiles
 # 7. Estimates pairwise ratios for modelling of number injecting for the first time each year
 
-setwd("H:/uam_age_trends")
-
 # -- libraries --
 
 library(data.table) # for reading and manipulating data
