@@ -177,6 +177,17 @@ dv <- function (v) {
 desctab <- rbindlist(lapply(c('total', 'gen', 'govoff', 'yearGroup'), dv))
 fwrite(desctab, 'descriptive_table_2oct2021.csv')
 
+#  :::::
+#  drugs
+#  .....
+
+table(d$heroin1, useNA = 'always')
+#    No   Yes  <NA> 
+#  1801 19989 44738
+prop.table(table(d$heroin1))
+#         No        Yes 
+# 0.08265259 0.91734741
+
 #  :::::::::::::::::::
 #  age of participants
 #  ...................
@@ -193,9 +204,6 @@ for (i in seq_along(age_act)) {age_act[[i]]$region <- names(age_act)[i]}
 
 age_reg <- rbindlist(age_reg)
 age_act <- rbindlist(age_act)
-
-fwrite(age_reg, 'uam_age_reg_2oct2021.csv')
-fwrite(age_act, 'uam_age_act_2oct2021.csv')
 
 #  :::::::::::::::::
 #  age of initiation
@@ -217,9 +225,6 @@ for (i in seq_along(ini_act)) {ini_act[[i]]$region <- names(ini_act)[i]}
 
 ini_reg <- rbindlist(ini_reg)
 ini_act <- rbindlist(ini_act)
-
-fwrite(ini_reg, 'uam_age_init_reg_2oct2021.csv')
-fwrite(ini_act, 'uam_age_init_act_2oct2021.csv')
 
 #  :::::::::::::::::::::
 #  duration of injecting
@@ -338,12 +343,13 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
 
 decay_values <- 1/(10:20)
 regions <- d[!is.na(govoff), unique(govoff)]
+regions_england <- regions[!(regions %in% c('Wales', 'Northern Ireland'))]
 
-regions_input <- c(as.list(regions), rep(list(regions), length(decay_values) + 2))
-decay_input <- c(rep(1/15, length(regions)+2), decay_values)
-minYear_input <- c(rep(1990, length(regions) + 1), 2008, rep(1990, length(decay_values))) 
+regions_input <- c(as.list(regions_england), rep(list(regions_england), length(decay_values) + 2))
+decay_input <- c(rep(1/15, length(regions_england)+2), decay_values)
+minYear_input <- c(rep(1990, length(regions_england) + 1), 2008, rep(1990, length(decay_values))) 
 
-names_input <- c(regions, 'England', 'England2008', paste0('1/', 10:20))
+names_input <- c(regions_england, 'England', 'England2008', paste0('1/', 10:20))
 
 # bootstrap pairwise ratios and variances
 
@@ -375,4 +381,4 @@ weighted_ratio[, ratio := exp(logratio)]
 weighted_ratio[, ratio_lci := exp(logratio - qnorm(0.975) * sqrt(var_log_ratio))]
 weighted_ratio[, ratio_uci := exp(logratio + qnorm(0.975) * sqrt(var_log_ratio))]
 
-fwrite(weighted_ratio, 'uam_pairwise_ratios_2oct2021.csv')
+fwrite(weighted_ratio, 'uam_pairwise_ratios_6oct2021.csv')
