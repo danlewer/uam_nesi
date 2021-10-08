@@ -1,5 +1,3 @@
-setwd("N:/Q/uam_nesi")
-
 library(data.table)
 library(RColorBrewer) # for plot colours
 library(devEMF)
