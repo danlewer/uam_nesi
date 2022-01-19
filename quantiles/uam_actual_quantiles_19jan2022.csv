@@ -1,0 +1,1507 @@
+year,md,lower,upper,region,parameter
+1991,27.5,26,28.75,East Midlands,age
+1992,29,24.5,35,East Midlands,age
+1994,33,29,39.5,East Midlands,age
+1995,26.5,23,30.75,East Midlands,age
+1996,28.5,24.75,34.25,East Midlands,age
+1997,27,22,31,East Midlands,age
+1998,28,23,34,East Midlands,age
+1999,25.5,21,31,East Midlands,age
+2000,28,24,32,East Midlands,age
+2001,27,24,32,East Midlands,age
+2002,29,24,36,East Midlands,age
+2003,29,24,31,East Midlands,age
+2004,28,25,34,East Midlands,age
+2005,28,24.5,33.5,East Midlands,age
+2006,29,24,35,East Midlands,age
+2007,28.5,24,34,East Midlands,age
+2008,30,26,34,East Midlands,age
+2009,31,26.75,36,East Midlands,age
+2010,32,27,38,East Midlands,age
+2011,32,28,36,East Midlands,age
+2012,33,28,40,East Midlands,age
+2013,35,29,39,East Midlands,age
+2014,35,29,41,East Midlands,age
+2015,36,30,43,East Midlands,age
+2016,36,32,40,East Midlands,age
+2017,38,33,44,East Midlands,age
+2018,38,32.25,43,East Midlands,age
+2019,37,33,41,East Midlands,age
+1990,29,26,38,East of England,age
+1991,29,26,34,East of England,age
+1992,30,27,36,East of England,age
+1993,33,28.5,36,East of England,age
+1994,29,26,36,East of England,age
+1995,31,27,37,East of England,age
+1996,28,25,34.5,East of England,age
+1997,29,26,33,East of England,age
+1998,30,26,36,East of England,age
+1999,30,26,36,East of England,age
+2000,31,25,36,East of England,age
+2001,31,25,36,East of England,age
+2002,30,25,36,East of England,age
+2003,30,26,37,East of England,age
+2004,30,25,36,East of England,age
+2005,30,27,37,East of England,age
+2006,32,27,37,East of England,age
+2007,31,27,37.5,East of England,age
+2008,30,25,36,East of England,age
+2009,33,28,39,East of England,age
+2010,33,26,38.75,East of England,age
+2011,36,31,42,East of England,age
+2012,35,30,39,East of England,age
+2013,35,29,40.25,East of England,age
+2014,37,31,45.5,East of England,age
+2015,35,30,41,East of England,age
+2016,37,31,43,East of England,age
+2017,38,32,45,East of England,age
+2018,38,33,44.25,East of England,age
+2019,39,34,44,East of England,age
+1990,29,26,33,London,age
+1991,31,27,38,London,age
+1992,31,27,36,London,age
+1993,30,27,35,London,age
+1994,30,27,35,London,age
+1995,31,28,35,London,age
+1996,30,26,36,London,age
+1997,32,27.5,37,London,age
+1998,33,29,38,London,age
+1999,32,27,37,London,age
+2000,33,28,38,London,age
+2001,34,28,39,London,age
+2002,36,30,41,London,age
+2003,35,30,40,London,age
+2004,35,30,40,London,age
+2005,36,31,42,London,age
+2006,37,31,42,London,age
+2007,37,31,42,London,age
+2008,38,32,42,London,age
+2009,37,33,43,London,age
+2010,37,31,44,London,age
+2011,38.5,34,45,London,age
+2012,38,32.5,43,London,age
+2013,40,35,46.25,London,age
+2014,40,34,48,London,age
+2015,42,35,49,London,age
+2016,44,39,50,London,age
+2017,43,37,50,London,age
+2018,43,37,49,London,age
+2019,42,35,49,London,age
+1992,21,20,26,North East,age
+1993,29,27,33,North East,age
+1994,23,19.75,30,North East,age
+1995,23,20,27,North East,age
+1996,24,22,28,North East,age
+1997,23,20,25,North East,age
+1998,24,21,27,North East,age
+1999,25,21,28,North East,age
+2000,24,20,29,North East,age
+2001,25,21,28,North East,age
+2002,27,23,31,North East,age
+2003,25,22,29,North East,age
+2004,25,22,30,North East,age
+2005,26,23,30,North East,age
+2006,26,23,31,North East,age
+2007,27,24,31,North East,age
+2008,28,24,33,North East,age
+2009,28,24,34,North East,age
+2010,30,25,33,North East,age
+2011,31,26,35,North East,age
+2012,30,25,35,North East,age
+2013,33,28,37.25,North East,age
+2014,32,28,38,North East,age
+2015,35,29,38,North East,age
+2016,35,30,41,North East,age
+2017,36,31,40,North East,age
+2018,35,30,40,North East,age
+2019,38,32,45,North East,age
+1990,25,22,29,North West,age
+1991,26,22,29,North West,age
+1992,26,23,30,North West,age
+1993,26,23,30,North West,age
+1994,27,23,31,North West,age
+1995,28,24,32,North West,age
+1996,28,24,33,North West,age
+1997,28,24,32,North West,age
+1998,29,26,33,North West,age
+1999,30,26,34,North West,age
+2000,30,26,35,North West,age
+2001,31,27,35,North West,age
+2002,33,29,37,North West,age
+2003,33,29,36.25,North West,age
+2004,33,29,36,North West,age
+2005,34,29,38,North West,age
+2006,34,29,38,North West,age
+2007,34,29,39,North West,age
+2008,36,31,41,North West,age
+2009,36,31.25,41,North West,age
+2010,38,32,43,North West,age
+2011,38,32,43,North West,age
+2012,38,31,42.25,North West,age
+2013,38,32,44,North West,age
+2014,39,34,43,North West,age
+2015,39,34,45,North West,age
+2016,42,34,46,North West,age
+2017,41,34,46,North West,age
+2018,40.5,35,46.25,North West,age
+2019,40,35,46,North West,age
+1990,32,26,35,South East,age
+1991,29,25,35,South East,age
+1992,27,25,32,South East,age
+1993,27,22,32,South East,age
+1994,28,23,32,South East,age
+1995,26,23,32,South East,age
+1996,27,22,32,South East,age
+1997,26,21.25,31,South East,age
+1998,26,21,32,South East,age
+1999,28,23,33,South East,age
+2000,29,26,34.5,South East,age
+2001,29,25,34,South East,age
+2002,30,27,34,South East,age
+2003,30,26.25,36,South East,age
+2004,32,26,38,South East,age
+2005,33,28,39,South East,age
+2006,32,27,37,South East,age
+2007,32,27,37,South East,age
+2008,34,28,39.25,South East,age
+2009,34,28,40,South East,age
+2010,35,29,40,South East,age
+2011,35,29,41,South East,age
+2012,35,30,42,South East,age
+2013,35,30,41,South East,age
+2014,37,31.25,43,South East,age
+2015,36,31,43,South East,age
+2016,37,32,43,South East,age
+2017,37.5,33,43,South East,age
+2018,38.5,33,44,South East,age
+2019,39,33,45,South East,age
+1990,29,24,35,South West,age
+1991,27,22.5,33,South West,age
+1992,30,24,35,South West,age
+1993,28,24,34,South West,age
+1994,27,23,33,South West,age
+1995,28,24,34,South West,age
+1996,28,24,34,South West,age
+1997,27,22,32,South West,age
+1998,27,23,33,South West,age
+1999,27,23,33,South West,age
+2000,29,24,34,South West,age
+2001,28,24,34,South West,age
+2002,30,25,35,South West,age
+2003,30,26,36,South West,age
+2004,30,25,35.25,South West,age
+2005,30,25,36,South West,age
+2006,30,25.5,36,South West,age
+2007,29,25,35,South West,age
+2008,31,27,36,South West,age
+2009,31,27,37,South West,age
+2010,33,28,39,South West,age
+2011,33,27,39,South West,age
+2012,33,27,38,South West,age
+2013,34,29,41,South West,age
+2014,34,29,42,South West,age
+2015,37,31.5,43.5,South West,age
+2016,39,34,45,South West,age
+2017,38,32,45,South West,age
+2018,39,34,45,South West,age
+2019,40,34,45.25,South West,age
+1990,26,22,33.5,Wales,age
+1991,28,21.5,34.5,Wales,age
+1992,28,23,32.25,Wales,age
+1993,29,25,32,Wales,age
+1994,29,24,34,Wales,age
+1995,30,25,36,Wales,age
+1996,26.5,23.25,32.5,Wales,age
+1997,25.5,20.25,31,Wales,age
+1998,27,21,33,Wales,age
+1999,30,26,35,Wales,age
+2000,29,23.5,34,Wales,age
+2001,26,22,32,Wales,age
+2002,28,24,32,Wales,age
+2003,25.5,21.75,31.25,Wales,age
+2004,32,28,35,Wales,age
+2005,29,25,34,Wales,age
+2006,30,26,37,Wales,age
+2007,30,26,35,Wales,age
+2008,33,28,37.75,Wales,age
+2009,33,27,39,Wales,age
+2010,32,25,38,Wales,age
+2011,34.5,31,40,Wales,age
+2012,35,29,41,Wales,age
+2013,36,30,42,Wales,age
+2014,36,29,43,Wales,age
+2015,38,30.5,45,Wales,age
+2016,38,32,44,Wales,age
+2017,39,32,45,Wales,age
+2018,41,34,46,Wales,age
+2019,39,33,45,Wales,age
+1992,33,28,37,West Midlands,age
+1993,29.5,26,36,West Midlands,age
+1994,30,24,33,West Midlands,age
+1995,32,29,40,West Midlands,age
+1996,28,24,33,West Midlands,age
+1997,26,22,33,West Midlands,age
+1998,28,22.75,34.25,West Midlands,age
+1999,28,23,32,West Midlands,age
+2000,28,23,32,West Midlands,age
+2001,29,24,34,West Midlands,age
+2002,27,22,34,West Midlands,age
+2003,27.5,23,33.75,West Midlands,age
+2004,33.5,27.75,35,West Midlands,age
+2005,27,24,35,West Midlands,age
+2006,26,23,32,West Midlands,age
+2007,30,26,36,West Midlands,age
+2008,29,25,36.5,West Midlands,age
+2009,30,26,36,West Midlands,age
+2010,32.5,27,38.75,West Midlands,age
+2011,34,29,38,West Midlands,age
+2012,35,30,41,West Midlands,age
+2013,34,30,40,West Midlands,age
+2014,35,30,40,West Midlands,age
+2015,37,32,41.75,West Midlands,age
+2016,36,31,40,West Midlands,age
+2017,36,31,44,West Midlands,age
+2018,38,33,42,West Midlands,age
+2019,39,34,45,West Midlands,age
+1990,25,21,27,Yorkshire & Humber,age
+1991,26,23.5,34.5,Yorkshire & Humber,age
+1992,23.5,22,25.5,Yorkshire & Humber,age
+1993,21.5,20.75,27.25,Yorkshire & Humber,age
+1994,22.5,21.25,24.5,Yorkshire & Humber,age
+2001,30,26.5,34.5,Yorkshire & Humber,age
+2002,31,27,35.5,Yorkshire & Humber,age
+2003,30,25.5,34,Yorkshire & Humber,age
+2004,30,25,34.5,Yorkshire & Humber,age
+2005,30,25,34.5,Yorkshire & Humber,age
+2006,31,27,35,Yorkshire & Humber,age
+2007,33,27,36.25,Yorkshire & Humber,age
+2008,32,28,38,Yorkshire & Humber,age
+2009,32,29,38.75,Yorkshire & Humber,age
+2010,34,30,39,Yorkshire & Humber,age
+2011,36,31,40.25,Yorkshire & Humber,age
+2012,35,29,39,Yorkshire & Humber,age
+2013,35,30,40,Yorkshire & Humber,age
+2014,37,32,42,Yorkshire & Humber,age
+2015,37,33.75,42,Yorkshire & Humber,age
+2016,37,33,43,Yorkshire & Humber,age
+2017,39,35,45,Yorkshire & Humber,age
+2018,39,35.5,44,Yorkshire & Humber,age
+2019,40,35,45,Yorkshire & Humber,age
+1990,26,23,31,England,age
+1991,27,24,33,England,age
+1992,27,24,32,England,age
+1993,28,24,32,England,age
+1994,28,24,33,England,age
+1995,28,24,33,England,age
+1996,28,24,34,England,age
+1997,28,24,33,England,age
+1998,29,24,34,England,age
+1999,29,24,34,England,age
+2000,29,24,34,England,age
+2001,29,24,35,England,age
+2002,31,26,36,England,age
+2003,31,26,37,England,age
+2004,31,26,37,England,age
+2005,32,26,37,England,age
+2006,32,26,37,England,age
+2007,31,26,37,England,age
+2008,32,27,38,England,age
+2009,33,27,39,England,age
+2010,34,28,40,England,age
+2011,35,29,40,England,age
+2012,35,29,41,England,age
+2013,35,30,41,England,age
+2014,36,31,42,England,age
+2015,37,32,44,England,age
+2016,38,33,44,England,age
+2017,38,33,45,England,age
+2018,39,34,45,England,age
+2019,39,34,45,England,age
+1989,24,24,24,East Midlands,age_init
+1990,20.5,18.25,23.25,East Midlands,age_init
+1991,26,26,26,East Midlands,age_init
+1993,22.5,20,28,East Midlands,age_init
+1994,22,19,25,East Midlands,age_init
+1992,19,18.5,19.5,East Midlands,age_init
+1995,22,19,27,East Midlands,age_init
+1996,22,19,26,East Midlands,age_init
+1997,22,17,25,East Midlands,age_init
+1998,24,20,28,East Midlands,age_init
+1999,23,20.5,29,East Midlands,age_init
+2000,24,23,28,East Midlands,age_init
+2001,21.5,18.25,25.75,East Midlands,age_init
+2002,22.5,19.25,28.5,East Midlands,age_init
+2003,23,20,26.5,East Midlands,age_init
+2004,21,19,26,East Midlands,age_init
+2005,23,19,26,East Midlands,age_init
+2006,24,20.75,31,East Midlands,age_init
+2007,25,19,32.5,East Midlands,age_init
+2008,25.5,21,27.75,East Midlands,age_init
+2009,22.5,19,23.25,East Midlands,age_init
+2010,22,19,28,East Midlands,age_init
+2011,27,22.25,35,East Midlands,age_init
+2012,30,23.25,36.75,East Midlands,age_init
+2013,29,23.75,38,East Midlands,age_init
+2014,27.5,24.75,33.75,East Midlands,age_init
+2015,26,25,35,East Midlands,age_init
+2016,32.5,29.25,39.75,East Midlands,age_init
+2017,33,26.5,39.25,East Midlands,age_init
+2018,32,27.5,36,East Midlands,age_init
+2019,30,30,34,East Midlands,age_init
+1988,31,27.5,34.5,East of England,age_init
+1987,23,22.5,23.5,East of England,age_init
+1990,25,23,25.75,East of England,age_init
+1989,23,21,24,East of England,age_init
+1992,20.5,20,21.75,East of England,age_init
+1991,20,20,20,East of England,age_init
+1993,24,18,29,East of England,age_init
+1995,20,17,27,East of England,age_init
+1994,20.5,15.5,25.25,East of England,age_init
+1996,24,21,27,East of England,age_init
+1997,22,18,25.5,East of England,age_init
+1998,22,19,27.25,East of England,age_init
+1999,26,20,30,East of England,age_init
+2000,21,18,26,East of England,age_init
+2001,26,19.5,28,East of England,age_init
+2002,24,20.25,28,East of England,age_init
+2003,23.5,19.25,31.5,East of England,age_init
+2004,23,19,30.5,East of England,age_init
+2005,26,21.5,33.5,East of England,age_init
+2006,26,20,30,East of England,age_init
+2007,21,20,26.25,East of England,age_init
+2008,24,19.5,25,East of England,age_init
+2009,26,20.5,33,East of England,age_init
+2010,26,22.5,35.5,East of England,age_init
+2011,27,20.5,37,East of England,age_init
+2012,28,23.75,33,East of England,age_init
+2013,32,26.25,37.25,East of England,age_init
+2014,28,26,34,East of England,age_init
+2015,34,30,41,East of England,age_init
+2016,31,27.5,34.5,East of England,age_init
+2017,32.5,29.75,34.25,East of England,age_init
+2018,29,27,33,East of England,age_init
+2019,35,31,38.25,East of England,age_init
+1990,25,21.5,28,London,age_init
+1988,24.5,20,28,London,age_init
+1987,22,20,24,London,age_init
+1989,23.5,19,28,London,age_init
+1991,26,21.5,28.5,London,age_init
+1992,25,21,29,London,age_init
+1993,25,21,29,London,age_init
+1994,24.5,21,29,London,age_init
+1995,26,22,30,London,age_init
+1996,26,21,30,London,age_init
+1997,25.5,21.75,28,London,age_init
+1998,25,21,32,London,age_init
+1999,27.5,23,33,London,age_init
+2000,28,24,32,London,age_init
+2001,27,24,32,London,age_init
+2002,28,24,34.5,London,age_init
+2003,28,24,34,London,age_init
+2004,28.5,25,33,London,age_init
+2005,30.5,25,35,London,age_init
+2006,27,23,35,London,age_init
+2007,28.5,21,34,London,age_init
+2008,26,20.5,31,London,age_init
+2009,33,28,37,London,age_init
+2010,28,21,36,London,age_init
+2011,33,28,36.5,London,age_init
+2012,31,25,38.5,London,age_init
+2013,35,28,38.5,London,age_init
+2014,29,25,37,London,age_init
+2015,34.5,26.25,38.5,London,age_init
+2016,35.5,31.5,38,London,age_init
+2017,38,31.5,40,London,age_init
+2018,34,30,39,London,age_init
+2019,36,34.5,37.5,London,age_init
+1990,18,18,23,North East,age_init
+1991,18,17,19,North East,age_init
+1989,18,18,18,North East,age_init
+1993,19,17,22,North East,age_init
+1994,19,17,21.25,North East,age_init
+1992,21,18.5,24.5,North East,age_init
+1995,21,18,24,North East,age_init
+1996,21,18,24,North East,age_init
+1997,21,18,24,North East,age_init
+1998,20,18,25,North East,age_init
+1999,21,19,25,North East,age_init
+2000,23,20,26,North East,age_init
+2001,23,18,26,North East,age_init
+2002,22,18,26,North East,age_init
+2003,22,19,28,North East,age_init
+2004,22,19,28.5,North East,age_init
+2005,22,20,27,North East,age_init
+2006,22,20,27,North East,age_init
+2007,24,19,28,North East,age_init
+2008,22,20,27,North East,age_init
+2009,20,18,24.75,North East,age_init
+2010,25,20,27,North East,age_init
+2011,25,20,28.5,North East,age_init
+2012,26,21,28,North East,age_init
+2013,26.5,23,31.5,North East,age_init
+2014,28,25.25,30.5,North East,age_init
+2015,29,24,30,North East,age_init
+2016,33,30,35,North East,age_init
+2017,33,27,39,North East,age_init
+2018,32,24.75,43.25,North East,age_init
+2019,28,24,34.5,North East,age_init
+1989,21,19,24,North West,age_init
+1987,20,18,24,North West,age_init
+1988,21,18,23,North West,age_init
+1990,21,18,25,North West,age_init
+1991,22,19,26,North West,age_init
+1992,22,19,25,North West,age_init
+1993,22,19,25,North West,age_init
+1994,22,19,26,North West,age_init
+1995,23,20,27,North West,age_init
+1996,23,20,27,North West,age_init
+1997,24.5,20,30,North West,age_init
+1998,23,20,28.5,North West,age_init
+1999,26,22,31.5,North West,age_init
+2000,26,22,30,North West,age_init
+2001,27,21,31,North West,age_init
+2002,27,21,30.5,North West,age_init
+2003,28,22.25,30,North West,age_init
+2004,25,21,31.75,North West,age_init
+2005,26,22,32,North West,age_init
+2006,29,24,33.75,North West,age_init
+2007,26,21,33.5,North West,age_init
+2008,27,21,30,North West,age_init
+2009,30,23.25,37.5,North West,age_init
+2010,28,24,40,North West,age_init
+2011,28,23,34.5,North West,age_init
+2012,34,28.5,37.75,North West,age_init
+2013,30,24,35,North West,age_init
+2014,30,25,38.5,North West,age_init
+2015,31.5,24.5,37.75,North West,age_init
+2016,32.5,24.75,40.5,North West,age_init
+2017,31,27,34,North West,age_init
+2018,34,32,38.5,North West,age_init
+2019,32.5,32.25,32.75,North West,age_init
+1999,29,23,31,Northern Ireland,age_init
+2000,28,20.5,30,Northern Ireland,age_init
+2002,25,21.5,29,Northern Ireland,age_init
+2001,29,25,37,Northern Ireland,age_init
+2003,24,21,27,Northern Ireland,age_init
+2004,22.5,21.25,27,Northern Ireland,age_init
+2005,21,18.75,26.5,Northern Ireland,age_init
+2006,24,21,31,Northern Ireland,age_init
+2007,23,21,28,Northern Ireland,age_init
+2008,22.5,20,25.5,Northern Ireland,age_init
+2009,26,24,28,Northern Ireland,age_init
+2010,26,24,29.5,Northern Ireland,age_init
+2011,24,22,28,Northern Ireland,age_init
+2012,26,23.5,30.75,Northern Ireland,age_init
+2013,27,23,30,Northern Ireland,age_init
+2014,24.5,22.25,28.25,Northern Ireland,age_init
+2015,27,23.5,32,Northern Ireland,age_init
+2016,23,20,28.25,Northern Ireland,age_init
+2017,26,22.75,27.75,Northern Ireland,age_init
+2018,31,28,34,Northern Ireland,age_init
+2019,27,26.5,27.5,Northern Ireland,age_init
+1987,26.5,22.75,28,South East,age_init
+1989,21.5,19.75,23.5,South East,age_init
+1988,22,21,30,South East,age_init
+1991,21,18.5,25,South East,age_init
+1990,20,18,23.75,South East,age_init
+1992,21,18,25,South East,age_init
+1993,20,18,25,South East,age_init
+1994,21,18,23.5,South East,age_init
+1995,21,18,25,South East,age_init
+1996,21,18,26,South East,age_init
+1997,22,18,24.5,South East,age_init
+1998,23,20,27,South East,age_init
+1999,25,21,29,South East,age_init
+2000,25.5,22.25,28,South East,age_init
+2001,26,22.25,28.75,South East,age_init
+2002,24,21,27,South East,age_init
+2003,27,22,30,South East,age_init
+2004,25,19,29.25,South East,age_init
+2005,26,20,31.25,South East,age_init
+2006,26.5,22,30.75,South East,age_init
+2007,24,19.25,30,South East,age_init
+2008,25,22,31,South East,age_init
+2009,26,20,32.75,South East,age_init
+2010,26,21.25,32,South East,age_init
+2011,25,20.75,31.25,South East,age_init
+2012,28.5,25,36,South East,age_init
+2013,29,23,35,South East,age_init
+2014,30,24,38,South East,age_init
+2015,30.5,26.25,35.25,South East,age_init
+2016,34,29,40,South East,age_init
+2017,35,28.25,40.5,South East,age_init
+2018,30,28,34.5,South East,age_init
+2019,35.5,28.25,43,South East,age_init
+1989,19.5,18,25,South West,age_init
+1990,20.5,18,24.75,South West,age_init
+1988,22,19,26,South West,age_init
+1987,21,19,21,South West,age_init
+1991,21,18,25,South West,age_init
+1992,22,18,25,South West,age_init
+1993,22,18,25,South West,age_init
+1994,21,18,26.25,South West,age_init
+1995,21,18,25,South West,age_init
+1996,21,18,25,South West,age_init
+1997,22,18,24.25,South West,age_init
+1998,22,19,27,South West,age_init
+1999,24,20.75,28,South West,age_init
+2000,23.5,19,28,South West,age_init
+2001,24,20,29,South West,age_init
+2002,26.5,19.25,30.75,South West,age_init
+2003,23,19,29.5,South West,age_init
+2004,22,19,27,South West,age_init
+2005,24.5,19.25,28,South West,age_init
+2006,22,19.5,27,South West,age_init
+2007,24,20,28,South West,age_init
+2008,25.5,19,28,South West,age_init
+2009,22,19,28,South West,age_init
+2010,26,22,30,South West,age_init
+2011,27,22,31,South West,age_init
+2012,26,21,31,South West,age_init
+2013,29,27,32,South West,age_init
+2014,29,22,38,South West,age_init
+2015,28,23,33,South West,age_init
+2016,30,20.5,37,South West,age_init
+2017,30,26,34,South West,age_init
+2018,30.5,28,35.75,South West,age_init
+2019,25,24,32,South West,age_init
+1987,19,19,19,Wales,age_init
+1990,20,18,26,Wales,age_init
+1989,19,18,21,Wales,age_init
+1991,22,21,25,Wales,age_init
+1988,16,16,16,Wales,age_init
+1992,23,21,26,Wales,age_init
+1993,21,20,24,Wales,age_init
+1994,21,19.25,24,Wales,age_init
+1995,20,17,25,Wales,age_init
+1996,21,17,26,Wales,age_init
+1997,22,19,27,Wales,age_init
+1998,20,18,26.75,Wales,age_init
+1999,23,18,26,Wales,age_init
+2000,22.5,18,25.25,Wales,age_init
+2001,22,20,25.75,Wales,age_init
+2002,22.5,18.5,26,Wales,age_init
+2003,22,21,24.5,Wales,age_init
+2004,25,22,27.75,Wales,age_init
+2005,24,19.5,30,Wales,age_init
+2006,25,21,29,Wales,age_init
+2007,23,19,28,Wales,age_init
+2008,24,20,30,Wales,age_init
+2009,25.5,24,35,Wales,age_init
+2010,25.5,19.25,33.75,Wales,age_init
+2011,28.5,23,35,Wales,age_init
+2012,30,21,38,Wales,age_init
+2013,29,26.5,34,Wales,age_init
+2014,26,22,34,Wales,age_init
+2015,31,28,35.25,Wales,age_init
+2016,32.5,29.5,37.75,Wales,age_init
+2017,31,27.5,38.75,Wales,age_init
+2018,24,22,33,Wales,age_init
+2019,36,27.5,44.75,Wales,age_init
+1989,23.5,21.75,25.25,West Midlands,age_init
+1991,24,18,27,West Midlands,age_init
+1990,18,18,19,West Midlands,age_init
+1992,20,18,22,West Midlands,age_init
+1993,21,17.5,25.5,West Midlands,age_init
+1994,22,19.25,24,West Midlands,age_init
+1996,21,19,24.75,West Midlands,age_init
+1995,22,17.5,25,West Midlands,age_init
+1997,21.5,17,26.25,West Midlands,age_init
+1998,21,18.25,24.75,West Midlands,age_init
+1999,22,20.75,28,West Midlands,age_init
+2000,23.5,21,27.75,West Midlands,age_init
+2001,22.5,19.5,29.75,West Midlands,age_init
+2002,21,19,27,West Midlands,age_init
+2003,23,18,25,West Midlands,age_init
+2004,26,21,30,West Midlands,age_init
+2005,25,21.25,27,West Midlands,age_init
+2006,26,22,28,West Midlands,age_init
+2007,24,21,27,West Midlands,age_init
+2008,26,23,30.75,West Midlands,age_init
+2009,27,22,33,West Midlands,age_init
+2010,24,21,30,West Midlands,age_init
+2011,27,23,33.5,West Midlands,age_init
+2012,28,24,32,West Midlands,age_init
+2013,29,24,32,West Midlands,age_init
+2014,28.5,24,30.75,West Midlands,age_init
+2015,28,26,35.5,West Midlands,age_init
+2016,33,28.5,41,West Midlands,age_init
+2017,35,32,39,West Midlands,age_init
+2018,37,33,47,West Midlands,age_init
+2019,34,30,35,West Midlands,age_init
+1987,24,24,24,Yorkshire & Humber,age_init
+1990,21,21,21,Yorkshire & Humber,age_init
+1988,19.5,17.5,20.5,Yorkshire & Humber,age_init
+1989,20.5,19.25,21.75,Yorkshire & Humber,age_init
+1991,19.5,18.25,28.25,Yorkshire & Humber,age_init
+1992,19.5,19,20.25,Yorkshire & Humber,age_init
+2000,26.5,21.25,33.5,Yorkshire & Humber,age_init
+1998,23,23,23,Yorkshire & Humber,age_init
+2001,24,18.25,27.5,Yorkshire & Humber,age_init
+2002,22.5,21.25,25,Yorkshire & Humber,age_init
+1999,25,22,25.5,Yorkshire & Humber,age_init
+2003,24,20.5,27.5,Yorkshire & Humber,age_init
+2005,24.5,20.75,30.25,Yorkshire & Humber,age_init
+2004,24.5,20,30.75,Yorkshire & Humber,age_init
+2006,23,21.25,27.5,Yorkshire & Humber,age_init
+2007,30,25,35.5,Yorkshire & Humber,age_init
+2008,23,19.25,28.75,Yorkshire & Humber,age_init
+2009,26,21,33,Yorkshire & Humber,age_init
+2010,26,21,30.75,Yorkshire & Humber,age_init
+2011,28.5,24,31.75,Yorkshire & Humber,age_init
+2012,27,24,33.5,Yorkshire & Humber,age_init
+2013,29,24,36,Yorkshire & Humber,age_init
+2014,26,24,31,Yorkshire & Humber,age_init
+2015,31,25,34,Yorkshire & Humber,age_init
+2016,37,28.5,38.75,Yorkshire & Humber,age_init
+2017,35,31,39,Yorkshire & Humber,age_init
+2018,32,29.5,39,Yorkshire & Humber,age_init
+2019,35.5,29,43.5,Yorkshire & Humber,age_init
+1990,21,18,25,England,age_init
+1988,21,18.75,24,England,age_init
+1987,21,18,24,England,age_init
+1989,21,19,24,England,age_init
+1991,22,19,26,England,age_init
+1992,22,19,26,England,age_init
+1993,22,19,26,England,age_init
+1994,22,19,26,England,age_init
+1995,22,19,26,England,age_init
+1996,22,19,27,England,age_init
+1997,22,18,26,England,age_init
+1998,22,19,27,England,age_init
+1999,24,20,28,England,age_init
+2000,24,20,29,England,age_init
+2001,25,20,29,England,age_init
+2002,24,20,29,England,age_init
+2003,24,21,30,England,age_init
+2004,24,20,29.25,England,age_init
+2005,25,20,30,England,age_init
+2006,26,21,30,England,age_init
+2007,24,20,29,England,age_init
+2008,25,21,30,England,age_init
+2009,25,20,32,England,age_init
+2010,25,21,31,England,age_init
+2011,27,22,33,England,age_init
+2012,28,24,34,England,age_init
+2013,29,24,35,England,age_init
+2014,28,24,34,England,age_init
+2015,30,25,35,England,age_init
+2016,33,28,39,England,age_init
+2017,33,28.5,39,England,age_init
+2018,33,28,38,England,age_init
+2019,33,28,37,England,age_init
+1983,16,15,17.25,East Midlands,age_init_whole_sample
+1989,18,15,20,East Midlands,age_init_whole_sample
+1990,17,15,21,East Midlands,age_init_whole_sample
+1980,17,14,18.25,East Midlands,age_init_whole_sample
+1986,16,15,17.75,East Midlands,age_init_whole_sample
+1981,16,14,19,East Midlands,age_init_whole_sample
+1982,16.5,14.75,18.25,East Midlands,age_init_whole_sample
+1988,18,16,20,East Midlands,age_init_whole_sample
+1991,17,15,20,East Midlands,age_init_whole_sample
+1985,16,15,19,East Midlands,age_init_whole_sample
+1987,17,16,20,East Midlands,age_init_whole_sample
+1993,18,16,22.25,East Midlands,age_init_whole_sample
+1994,18,16,22,East Midlands,age_init_whole_sample
+1984,17,16,19,East Midlands,age_init_whole_sample
+1992,19,16,21,East Midlands,age_init_whole_sample
+1995,18,16,21,East Midlands,age_init_whole_sample
+1996,18,17,23,East Midlands,age_init_whole_sample
+1997,19,16,23,East Midlands,age_init_whole_sample
+1998,20,18,25,East Midlands,age_init_whole_sample
+1999,20,17,25,East Midlands,age_init_whole_sample
+2000,20,16,24,East Midlands,age_init_whole_sample
+2001,20,17,25,East Midlands,age_init_whole_sample
+2002,22,18,27,East Midlands,age_init_whole_sample
+2003,22,19,26,East Midlands,age_init_whole_sample
+2004,22,18,27,East Midlands,age_init_whole_sample
+2005,22,18,26,East Midlands,age_init_whole_sample
+2006,23,19,29,East Midlands,age_init_whole_sample
+2007,22.5,18,29.75,East Midlands,age_init_whole_sample
+2008,23,20,28,East Midlands,age_init_whole_sample
+2009,21,18.25,23.75,East Midlands,age_init_whole_sample
+2010,21,18,28,East Midlands,age_init_whole_sample
+2011,25,21,30,East Midlands,age_init_whole_sample
+2012,26,22.25,35.5,East Midlands,age_init_whole_sample
+2013,29,23,36,East Midlands,age_init_whole_sample
+2014,26,22.75,33,East Midlands,age_init_whole_sample
+2015,31,25.25,34.5,East Midlands,age_init_whole_sample
+2016,32.5,29.25,39.75,East Midlands,age_init_whole_sample
+2017,33,26.5,39.25,East Midlands,age_init_whole_sample
+2018,32,27.5,36,East Midlands,age_init_whole_sample
+2019,30,30,34,East Midlands,age_init_whole_sample
+1984,17,16,20,East of England,age_init_whole_sample
+1988,20,18,25,East of England,age_init_whole_sample
+1981,17,15,19,East of England,age_init_whole_sample
+1982,17,15,18,East of England,age_init_whole_sample
+1986,18,17,21,East of England,age_init_whole_sample
+1980,16,15,18,East of England,age_init_whole_sample
+1983,17,16,18.25,East of England,age_init_whole_sample
+1985,19,16,21,East of England,age_init_whole_sample
+1987,20,17,24,East of England,age_init_whole_sample
+1990,20,17,24,East of England,age_init_whole_sample
+1989,18,16,23,East of England,age_init_whole_sample
+1992,20,17,24,East of England,age_init_whole_sample
+1991,18,17,23,East of England,age_init_whole_sample
+1993,19,17,22,East of England,age_init_whole_sample
+1995,19,16,23,East of England,age_init_whole_sample
+1994,19,16,24,East of England,age_init_whole_sample
+1996,21,17,24,East of England,age_init_whole_sample
+1997,20,18,24,East of England,age_init_whole_sample
+1998,21,18,26,East of England,age_init_whole_sample
+1999,20,18,27,East of England,age_init_whole_sample
+2000,21,19,26,East of England,age_init_whole_sample
+2001,23,18.25,28,East of England,age_init_whole_sample
+2002,24,19,28,East of England,age_init_whole_sample
+2003,24,20,30,East of England,age_init_whole_sample
+2004,23,19,27,East of England,age_init_whole_sample
+2005,21,18,29,East of England,age_init_whole_sample
+2006,23.5,19,29.25,East of England,age_init_whole_sample
+2007,21,19,28.75,East of England,age_init_whole_sample
+2008,21.5,19,25,East of England,age_init_whole_sample
+2009,27,21,31.5,East of England,age_init_whole_sample
+2010,25,23,32,East of England,age_init_whole_sample
+2011,26,20,32,East of England,age_init_whole_sample
+2012,26.5,24,31.75,East of England,age_init_whole_sample
+2013,28.5,26,35,East of England,age_init_whole_sample
+2014,28,25.25,33.5,East of England,age_init_whole_sample
+2015,34.5,28.75,41.5,East of England,age_init_whole_sample
+2016,31,27.5,34.5,East of England,age_init_whole_sample
+2017,32.5,29.75,34.25,East of England,age_init_whole_sample
+2018,29,27,33,East of England,age_init_whole_sample
+2019,35,31,38.25,East of England,age_init_whole_sample
+1982,18,16,21,London,age_init_whole_sample
+1985,20,17,23,London,age_init_whole_sample
+1986,19,17,24,London,age_init_whole_sample
+1990,22,19,26,London,age_init_whole_sample
+1980,18,16,20,London,age_init_whole_sample
+1988,21,18,24,London,age_init_whole_sample
+1987,19,17,23,London,age_init_whole_sample
+1981,18,16,21,London,age_init_whole_sample
+1989,21,18,25,London,age_init_whole_sample
+1984,19,17,22,London,age_init_whole_sample
+1983,18,17,21,London,age_init_whole_sample
+1991,22,19,26,London,age_init_whole_sample
+1992,22,19,27,London,age_init_whole_sample
+1993,23,20,27,London,age_init_whole_sample
+1994,23,19,27,London,age_init_whole_sample
+1995,24,20,28,London,age_init_whole_sample
+1996,24,20,30,London,age_init_whole_sample
+1997,23,18.5,27,London,age_init_whole_sample
+1998,24,20,29,London,age_init_whole_sample
+1999,25,20,30,London,age_init_whole_sample
+2000,26,21,31,London,age_init_whole_sample
+2001,26,22,30,London,age_init_whole_sample
+2002,27,23,31,London,age_init_whole_sample
+2003,27,23,33,London,age_init_whole_sample
+2004,28,22,33,London,age_init_whole_sample
+2005,29,23.5,34,London,age_init_whole_sample
+2006,27,22,35,London,age_init_whole_sample
+2007,28,21,33,London,age_init_whole_sample
+2008,26.5,22.5,31.25,London,age_init_whole_sample
+2009,28,20,34.5,London,age_init_whole_sample
+2010,26,21,35,London,age_init_whole_sample
+2011,31,27,35,London,age_init_whole_sample
+2012,30,25,36.5,London,age_init_whole_sample
+2013,35,28.5,38,London,age_init_whole_sample
+2014,33,25.75,38.5,London,age_init_whole_sample
+2015,31.5,26,37.75,London,age_init_whole_sample
+2016,35.5,31.5,38,London,age_init_whole_sample
+2017,38,31.5,40,London,age_init_whole_sample
+2018,34,30,39,London,age_init_whole_sample
+2019,36,34.5,37.5,London,age_init_whole_sample
+1990,18,17,20,North East,age_init_whole_sample
+1982,15,14,17,North East,age_init_whole_sample
+1987,17,16,19,North East,age_init_whole_sample
+1988,17,16,20,North East,age_init_whole_sample
+1991,17,16,20,North East,age_init_whole_sample
+1989,18,16,20,North East,age_init_whole_sample
+1981,16,15,17.25,North East,age_init_whole_sample
+1986,17,15,19,North East,age_init_whole_sample
+1993,19,16,21,North East,age_init_whole_sample
+1994,18,17,22,North East,age_init_whole_sample
+1992,18,15,22,North East,age_init_whole_sample
+1985,17,16,19.25,North East,age_init_whole_sample
+1983,16,13.75,18,North East,age_init_whole_sample
+1995,19,16,23,North East,age_init_whole_sample
+1980,16.5,14.75,17,North East,age_init_whole_sample
+1984,18,16,19,North East,age_init_whole_sample
+1996,19,17,23,North East,age_init_whole_sample
+1997,20,17,24,North East,age_init_whole_sample
+1998,19,17,23,North East,age_init_whole_sample
+1999,20,18,24,North East,age_init_whole_sample
+2000,21,18,25,North East,age_init_whole_sample
+2001,21,18,25,North East,age_init_whole_sample
+2002,20,18,25,North East,age_init_whole_sample
+2003,21,18,26,North East,age_init_whole_sample
+2004,21,18,26,North East,age_init_whole_sample
+2005,22,19,27,North East,age_init_whole_sample
+2006,21,18,27,North East,age_init_whole_sample
+2007,22,19,27.25,North East,age_init_whole_sample
+2008,22,19.25,27,North East,age_init_whole_sample
+2009,21,18,26,North East,age_init_whole_sample
+2010,23,20,27,North East,age_init_whole_sample
+2011,26,19,29,North East,age_init_whole_sample
+2012,26,20.75,29,North East,age_init_whole_sample
+2013,26,22.75,30,North East,age_init_whole_sample
+2014,27,22,29.5,North East,age_init_whole_sample
+2015,28,23.25,30,North East,age_init_whole_sample
+2016,33,30,35,North East,age_init_whole_sample
+2017,33,27,39,North East,age_init_whole_sample
+2018,32,24.75,43.25,North East,age_init_whole_sample
+2019,28,24,34.5,North East,age_init_whole_sample
+1986,18,17,21,North West,age_init_whole_sample
+1989,20,18,23,North West,age_init_whole_sample
+1987,19,17,22,North West,age_init_whole_sample
+1985,18,17,21,North West,age_init_whole_sample
+1982,18,16,20,North West,age_init_whole_sample
+1980,18,16,20,North West,age_init_whole_sample
+1984,18,16,20,North West,age_init_whole_sample
+1988,20,18,22,North West,age_init_whole_sample
+1981,18,16,20,North West,age_init_whole_sample
+1983,18,16,20,North West,age_init_whole_sample
+1990,20,18,24,North West,age_init_whole_sample
+1991,20,18,24,North West,age_init_whole_sample
+1992,21,19,25,North West,age_init_whole_sample
+1993,21,19,25,North West,age_init_whole_sample
+1994,22,19,26,North West,age_init_whole_sample
+1995,23,19,26,North West,age_init_whole_sample
+1996,22,19,26,North West,age_init_whole_sample
+1997,23,19,28,North West,age_init_whole_sample
+1998,22.5,18,27,North West,age_init_whole_sample
+1999,23,19,29,North West,age_init_whole_sample
+2000,24,20,29,North West,age_init_whole_sample
+2001,25,21,30,North West,age_init_whole_sample
+2002,25,19,30,North West,age_init_whole_sample
+2003,25,20,30,North West,age_init_whole_sample
+2004,25,20,30.75,North West,age_init_whole_sample
+2005,25,21,30,North West,age_init_whole_sample
+2006,25,20,32,North West,age_init_whole_sample
+2007,25.5,21,30,North West,age_init_whole_sample
+2008,25,20,31,North West,age_init_whole_sample
+2009,25,22.75,35,North West,age_init_whole_sample
+2010,28,23,35.5,North West,age_init_whole_sample
+2011,28,22.5,35,North West,age_init_whole_sample
+2012,32,25.75,37.5,North West,age_init_whole_sample
+2013,28,23,34.5,North West,age_init_whole_sample
+2014,30,25,35.5,North West,age_init_whole_sample
+2015,32.5,26.5,37.5,North West,age_init_whole_sample
+2016,32.5,24.75,40.5,North West,age_init_whole_sample
+2017,31,27,34,North West,age_init_whole_sample
+2018,34,32,38.5,North West,age_init_whole_sample
+2019,32.5,32.25,32.75,North West,age_init_whole_sample
+1994,21,19,24,Northern Ireland,age_init_whole_sample
+1996,21,17.5,24,Northern Ireland,age_init_whole_sample
+1999,22,19,26,Northern Ireland,age_init_whole_sample
+1992,21,19.75,24.25,Northern Ireland,age_init_whole_sample
+1997,20,18,24,Northern Ireland,age_init_whole_sample
+1988,19.5,17,21.5,Northern Ireland,age_init_whole_sample
+2000,23,20,28,Northern Ireland,age_init_whole_sample
+1995,18,18,22,Northern Ireland,age_init_whole_sample
+2002,24,20,27,Northern Ireland,age_init_whole_sample
+1998,21,18,25,Northern Ireland,age_init_whole_sample
+2001,24,21,30,Northern Ireland,age_init_whole_sample
+1991,18,16,20.25,Northern Ireland,age_init_whole_sample
+1990,19,17,21,Northern Ireland,age_init_whole_sample
+2003,23,20,26,Northern Ireland,age_init_whole_sample
+1987,20,14.75,24.25,Northern Ireland,age_init_whole_sample
+1984,16.5,15.75,18.5,Northern Ireland,age_init_whole_sample
+1980,16,16,16,Northern Ireland,age_init_whole_sample
+1993,21,17,21.75,Northern Ireland,age_init_whole_sample
+1986,21,17.5,23.5,Northern Ireland,age_init_whole_sample
+2004,22,20,25,Northern Ireland,age_init_whole_sample
+2005,21,19,25,Northern Ireland,age_init_whole_sample
+1989,17,17,17.5,Northern Ireland,age_init_whole_sample
+2006,23,20,28,Northern Ireland,age_init_whole_sample
+1982,17,15,18,Northern Ireland,age_init_whole_sample
+1983,16,15,20,Northern Ireland,age_init_whole_sample
+2007,21,19,25.75,Northern Ireland,age_init_whole_sample
+1985,25,23.5,25,Northern Ireland,age_init_whole_sample
+2008,23,19,26,Northern Ireland,age_init_whole_sample
+2009,24.5,21.5,27,Northern Ireland,age_init_whole_sample
+2010,24,23,29,Northern Ireland,age_init_whole_sample
+2011,24,23,28,Northern Ireland,age_init_whole_sample
+2012,26,23,30,Northern Ireland,age_init_whole_sample
+2013,27,23,30,Northern Ireland,age_init_whole_sample
+2014,24.5,22,29,Northern Ireland,age_init_whole_sample
+2015,27,23,30,Northern Ireland,age_init_whole_sample
+2016,23,20,28.25,Northern Ireland,age_init_whole_sample
+2017,26,22.75,27.75,Northern Ireland,age_init_whole_sample
+2018,31,28,34,Northern Ireland,age_init_whole_sample
+2019,27,26.5,27.5,Northern Ireland,age_init_whole_sample
+1980,18,16,20,South East,age_init_whole_sample
+1981,17,16,19,South East,age_init_whole_sample
+1982,17,15,20,South East,age_init_whole_sample
+1985,18,16,20,South East,age_init_whole_sample
+1987,19,17,22,South East,age_init_whole_sample
+1983,17,16,20,South East,age_init_whole_sample
+1989,19,17,22,South East,age_init_whole_sample
+1984,18,16,20,South East,age_init_whole_sample
+1986,18,16,21,South East,age_init_whole_sample
+1988,19,17,23,South East,age_init_whole_sample
+1991,20,18,23,South East,age_init_whole_sample
+1990,19,17,22,South East,age_init_whole_sample
+1992,20,18,23.5,South East,age_init_whole_sample
+1993,19,17,23,South East,age_init_whole_sample
+1994,20,17,24,South East,age_init_whole_sample
+1995,20,18,24,South East,age_init_whole_sample
+1996,21,17,25,South East,age_init_whole_sample
+1997,20.5,17.75,25,South East,age_init_whole_sample
+1998,22,18,26,South East,age_init_whole_sample
+1999,22,19,26,South East,age_init_whole_sample
+2000,24,19,28,South East,age_init_whole_sample
+2001,22,19,28,South East,age_init_whole_sample
+2002,24,20,29,South East,age_init_whole_sample
+2003,24,19,30,South East,age_init_whole_sample
+2004,23,18,29,South East,age_init_whole_sample
+2005,24,20,30,South East,age_init_whole_sample
+2006,26,20,30,South East,age_init_whole_sample
+2007,24,19,30,South East,age_init_whole_sample
+2008,25,21,31,South East,age_init_whole_sample
+2009,25,20,32,South East,age_init_whole_sample
+2010,25.5,22,32,South East,age_init_whole_sample
+2011,25,21,32,South East,age_init_whole_sample
+2012,29.5,25,36,South East,age_init_whole_sample
+2013,28.5,23,35.25,South East,age_init_whole_sample
+2014,29,23.75,35,South East,age_init_whole_sample
+2015,31,27,36,South East,age_init_whole_sample
+2016,34,29,40,South East,age_init_whole_sample
+2017,35,28.25,40.5,South East,age_init_whole_sample
+2018,30,28,34.5,South East,age_init_whole_sample
+2019,35.5,28.25,43,South East,age_init_whole_sample
+1984,17,16,21,South West,age_init_whole_sample
+1980,18,16,20,South West,age_init_whole_sample
+1989,19,16,22,South West,age_init_whole_sample
+1990,18,17,22,South West,age_init_whole_sample
+1982,17,16,20,South West,age_init_whole_sample
+1988,18,17,22,South West,age_init_whole_sample
+1987,18,16,20,South West,age_init_whole_sample
+1985,18,16,21,South West,age_init_whole_sample
+1983,17,15,19,South West,age_init_whole_sample
+1986,17,16,20,South West,age_init_whole_sample
+1981,18,16,20,South West,age_init_whole_sample
+1991,20,17,23,South West,age_init_whole_sample
+1992,20,17,23,South West,age_init_whole_sample
+1993,20,17,24,South West,age_init_whole_sample
+1994,20,17,25,South West,age_init_whole_sample
+1995,20,17,24,South West,age_init_whole_sample
+1996,20,18,24,South West,age_init_whole_sample
+1997,21,18,24,South West,age_init_whole_sample
+1998,21,18,25,South West,age_init_whole_sample
+1999,22,18,27,South West,age_init_whole_sample
+2000,22,18,27,South West,age_init_whole_sample
+2001,22,19,27,South West,age_init_whole_sample
+2002,21,18,28,South West,age_init_whole_sample
+2003,23,19,28,South West,age_init_whole_sample
+2004,22,18,27,South West,age_init_whole_sample
+2005,22,18,28,South West,age_init_whole_sample
+2006,22,19,27.25,South West,age_init_whole_sample
+2007,23,20,27,South West,age_init_whole_sample
+2008,25,19,28,South West,age_init_whole_sample
+2009,22,19,28,South West,age_init_whole_sample
+2010,25,21,30,South West,age_init_whole_sample
+2011,26,22,29.75,South West,age_init_whole_sample
+2012,26,21,31,South West,age_init_whole_sample
+2013,29,26,32,South West,age_init_whole_sample
+2014,29,24,34,South West,age_init_whole_sample
+2015,28,22.25,30.75,South West,age_init_whole_sample
+2016,30,20.5,37,South West,age_init_whole_sample
+2017,30,26,34,South West,age_init_whole_sample
+2018,30.5,28,35.75,South West,age_init_whole_sample
+2019,25,24,32,South West,age_init_whole_sample
+1986,18,16,20.25,Wales,age_init_whole_sample
+1983,18,17,20,Wales,age_init_whole_sample
+1987,18,15,21.25,Wales,age_init_whole_sample
+1981,17,15,19,Wales,age_init_whole_sample
+1990,19,16,23,Wales,age_init_whole_sample
+1989,18,17,22,Wales,age_init_whole_sample
+1991,18,16,21,Wales,age_init_whole_sample
+1988,18,16.25,22,Wales,age_init_whole_sample
+1982,17,16,19,Wales,age_init_whole_sample
+1984,17,16,19,Wales,age_init_whole_sample
+1985,19,17,20.75,Wales,age_init_whole_sample
+1980,17,17,20,Wales,age_init_whole_sample
+1992,19,16,23,Wales,age_init_whole_sample
+1993,20,18,25,Wales,age_init_whole_sample
+1994,21,17,24,Wales,age_init_whole_sample
+1995,20,16,25,Wales,age_init_whole_sample
+1996,19,17,24,Wales,age_init_whole_sample
+1997,21,18,25,Wales,age_init_whole_sample
+1998,20,18,25,Wales,age_init_whole_sample
+1999,22.5,18,27,Wales,age_init_whole_sample
+2000,20.5,17,25,Wales,age_init_whole_sample
+2001,20,18,25.75,Wales,age_init_whole_sample
+2002,22,18,27,Wales,age_init_whole_sample
+2003,22,19,28,Wales,age_init_whole_sample
+2004,25,21,29,Wales,age_init_whole_sample
+2005,23,18,28,Wales,age_init_whole_sample
+2006,24.5,19,29,Wales,age_init_whole_sample
+2007,24,19,30,Wales,age_init_whole_sample
+2008,24,20,30,Wales,age_init_whole_sample
+2009,25,19,30.5,Wales,age_init_whole_sample
+2010,25,18,34,Wales,age_init_whole_sample
+2011,26,21,35,Wales,age_init_whole_sample
+2012,27,21,36.5,Wales,age_init_whole_sample
+2013,28,24.5,34.5,Wales,age_init_whole_sample
+2014,26,22,34,Wales,age_init_whole_sample
+2015,30,28,35,Wales,age_init_whole_sample
+2016,32.5,29.5,37.75,Wales,age_init_whole_sample
+2017,31,27.5,38.75,Wales,age_init_whole_sample
+2018,24,22,33,Wales,age_init_whole_sample
+2019,36,27.5,44.75,Wales,age_init_whole_sample
+1980,18.5,16,20,West Midlands,age_init_whole_sample
+1983,18,16,19.25,West Midlands,age_init_whole_sample
+1981,18,16,22,West Midlands,age_init_whole_sample
+1987,18,16,20,West Midlands,age_init_whole_sample
+1985,18,16,20.75,West Midlands,age_init_whole_sample
+1982,17,15,20,West Midlands,age_init_whole_sample
+1984,18,16,20,West Midlands,age_init_whole_sample
+1989,19,17,23,West Midlands,age_init_whole_sample
+1991,19,17,21,West Midlands,age_init_whole_sample
+1986,18,16,20,West Midlands,age_init_whole_sample
+1988,18,16,21,West Midlands,age_init_whole_sample
+1990,19,17,22,West Midlands,age_init_whole_sample
+1992,20,17,22,West Midlands,age_init_whole_sample
+1993,20,17,24,West Midlands,age_init_whole_sample
+1994,19,16,23,West Midlands,age_init_whole_sample
+1996,20,17,24,West Midlands,age_init_whole_sample
+1995,19,16,23,West Midlands,age_init_whole_sample
+1997,20,17,24.25,West Midlands,age_init_whole_sample
+1998,20,17,23,West Midlands,age_init_whole_sample
+1999,20,18,24,West Midlands,age_init_whole_sample
+2000,21,18,26,West Midlands,age_init_whole_sample
+2001,21,18,26,West Midlands,age_init_whole_sample
+2002,22,18,26,West Midlands,age_init_whole_sample
+2003,22,18,26,West Midlands,age_init_whole_sample
+2004,24,20,28,West Midlands,age_init_whole_sample
+2005,24,20,28,West Midlands,age_init_whole_sample
+2006,25,21,29,West Midlands,age_init_whole_sample
+2007,24,20.25,28,West Midlands,age_init_whole_sample
+2008,26,22,30,West Midlands,age_init_whole_sample
+2009,25.5,22,31,West Midlands,age_init_whole_sample
+2010,25,21,31,West Midlands,age_init_whole_sample
+2011,26,23,31.5,West Midlands,age_init_whole_sample
+2012,29,25,34,West Midlands,age_init_whole_sample
+2013,27,24,31,West Midlands,age_init_whole_sample
+2014,27.5,22,30.25,West Midlands,age_init_whole_sample
+2015,28,26,35,West Midlands,age_init_whole_sample
+2016,33,28.5,41,West Midlands,age_init_whole_sample
+2017,35,32,39,West Midlands,age_init_whole_sample
+2018,37,33,47,West Midlands,age_init_whole_sample
+2019,34,30,35,West Midlands,age_init_whole_sample
+1981,18,16,20.5,Yorkshire & Humber,age_init_whole_sample
+1986,18,15,19.75,Yorkshire & Humber,age_init_whole_sample
+1985,17.5,15.75,19,Yorkshire & Humber,age_init_whole_sample
+1987,18,15,20,Yorkshire & Humber,age_init_whole_sample
+1990,18,16,21,Yorkshire & Humber,age_init_whole_sample
+1980,16,14,17,Yorkshire & Humber,age_init_whole_sample
+1988,16.5,14.25,19,Yorkshire & Humber,age_init_whole_sample
+1989,18,16.75,19.25,Yorkshire & Humber,age_init_whole_sample
+1984,16,16,18,Yorkshire & Humber,age_init_whole_sample
+1983,18,15.25,19.5,Yorkshire & Humber,age_init_whole_sample
+1982,17,15,18.25,Yorkshire & Humber,age_init_whole_sample
+1991,18,15,20,Yorkshire & Humber,age_init_whole_sample
+1992,19,17,21,Yorkshire & Humber,age_init_whole_sample
+1997,18,17,24,Yorkshire & Humber,age_init_whole_sample
+2000,21,17,25.25,Yorkshire & Humber,age_init_whole_sample
+1994,18,16,22.25,Yorkshire & Humber,age_init_whole_sample
+1998,19,17,23,Yorkshire & Humber,age_init_whole_sample
+1996,18,17,21,Yorkshire & Humber,age_init_whole_sample
+1993,18,16,22,Yorkshire & Humber,age_init_whole_sample
+2001,22,18,26,Yorkshire & Humber,age_init_whole_sample
+2002,23,19,28,Yorkshire & Humber,age_init_whole_sample
+1999,21.5,18,25,Yorkshire & Humber,age_init_whole_sample
+1995,18,16,21,Yorkshire & Humber,age_init_whole_sample
+2003,24,19.5,27.5,Yorkshire & Humber,age_init_whole_sample
+2005,24,19,29,Yorkshire & Humber,age_init_whole_sample
+2004,22,19,27,Yorkshire & Humber,age_init_whole_sample
+2006,23,21,30,Yorkshire & Humber,age_init_whole_sample
+2007,26,21,31,Yorkshire & Humber,age_init_whole_sample
+2008,23.5,19.75,28.25,Yorkshire & Humber,age_init_whole_sample
+2009,24,20,26.75,Yorkshire & Humber,age_init_whole_sample
+2010,28,23,32.5,Yorkshire & Humber,age_init_whole_sample
+2011,25,24,30,Yorkshire & Humber,age_init_whole_sample
+2012,26.5,23.75,33.25,Yorkshire & Humber,age_init_whole_sample
+2013,29,23.25,36,Yorkshire & Humber,age_init_whole_sample
+2014,28,24.5,34,Yorkshire & Humber,age_init_whole_sample
+2015,31,22,34,Yorkshire & Humber,age_init_whole_sample
+2016,37,28.5,38.75,Yorkshire & Humber,age_init_whole_sample
+2017,35,31,39,Yorkshire & Humber,age_init_whole_sample
+2018,32,29.5,39,Yorkshire & Humber,age_init_whole_sample
+2019,35.5,29,43.5,Yorkshire & Humber,age_init_whole_sample
+1982,17,16,20,England,age_init_whole_sample
+1985,18,16,21,England,age_init_whole_sample
+1986,18,16,21,England,age_init_whole_sample
+1990,20,17,24,England,age_init_whole_sample
+1980,18,16,20,England,age_init_whole_sample
+1988,20,17,23,England,age_init_whole_sample
+1987,19,17,22,England,age_init_whole_sample
+1981,18,16,20,England,age_init_whole_sample
+1989,19,17,23,England,age_init_whole_sample
+1984,18,16,21,England,age_init_whole_sample
+1983,18,16,20,England,age_init_whole_sample
+1991,20,17,24,England,age_init_whole_sample
+1992,20,18,24,England,age_init_whole_sample
+1993,21,17,25,England,age_init_whole_sample
+1994,21,17,25,England,age_init_whole_sample
+1995,21,17,25,England,age_init_whole_sample
+1996,21,18,25,England,age_init_whole_sample
+1997,21,18,25,England,age_init_whole_sample
+1998,21,18,25,England,age_init_whole_sample
+1999,21,18,26,England,age_init_whole_sample
+2000,22,18,27,England,age_init_whole_sample
+2001,22,19,28,England,age_init_whole_sample
+2002,23,19,28,England,age_init_whole_sample
+2003,23,19,28,England,age_init_whole_sample
+2004,23,19,29,England,age_init_whole_sample
+2005,23,19,28,England,age_init_whole_sample
+2006,24,20,29,England,age_init_whole_sample
+2007,24,19,29,England,age_init_whole_sample
+2008,24,20,29,England,age_init_whole_sample
+2009,24,20,30,England,age_init_whole_sample
+2010,25,21,31,England,age_init_whole_sample
+2011,26,22,32,England,age_init_whole_sample
+2012,28,24,34,England,age_init_whole_sample
+2013,28,24,35,England,age_init_whole_sample
+2014,28,23,34,England,age_init_whole_sample
+2015,30,25,35,England,age_init_whole_sample
+2016,33,28,39,England,age_init_whole_sample
+2017,33,28.5,39,England,age_init_whole_sample
+2018,33,28,38,England,age_init_whole_sample
+2019,33,28,37,England,age_init_whole_sample
+1991,8,3.5,14.25,East Midlands,dur
+1992,11.5,6,16.75,East Midlands,dur
+1994,15,8,19,East Midlands,dur
+1995,9,3,12,East Midlands,dur
+1996,6,3,15.25,East Midlands,dur
+1997,4,2,9.25,East Midlands,dur
+1998,6,3,10,East Midlands,dur
+1999,4,2,8,East Midlands,dur
+2000,6,2,11.25,East Midlands,dur
+2001,4,2,10,East Midlands,dur
+2002,8,4,14,East Midlands,dur
+2003,6,3,10,East Midlands,dur
+2004,7,4,10,East Midlands,dur
+2005,7,4,11,East Midlands,dur
+2006,8,4,12,East Midlands,dur
+2007,7,4,11,East Midlands,dur
+2008,9,5,13,East Midlands,dur
+2009,9,5,13,East Midlands,dur
+2010,11,6,14,East Midlands,dur
+2011,11,6,14.25,East Midlands,dur
+2012,11,6,17,East Midlands,dur
+2013,14,9,19,East Midlands,dur
+2014,14,7,20,East Midlands,dur
+2015,14.5,8,20,East Midlands,dur
+2016,16,10,20,East Midlands,dur
+2017,16,10,22,East Midlands,dur
+2018,16,9,21.75,East Midlands,dur
+2019,17,10,22,East Midlands,dur
+1990,10.5,7,11,East of England,dur
+1991,10,6,15,East of England,dur
+1992,10,7,19,East of England,dur
+1993,11.5,7.75,16.75,East of England,dur
+1994,12,8,17,East of England,dur
+1995,12,7,17,East of England,dur
+1996,7,4,14,East of England,dur
+1997,9.5,5,14.25,East of England,dur
+1998,9,4,16,East of England,dur
+1999,8,3,15,East of England,dur
+2000,9,3,14,East of England,dur
+2001,8,4,15,East of England,dur
+2002,7,3,15.75,East of England,dur
+2003,7,3,12,East of England,dur
+2004,9,5,15,East of England,dur
+2005,10.5,6,16,East of England,dur
+2006,10,4,14.75,East of England,dur
+2007,8,3.5,13.5,East of England,dur
+2008,9,3,15,East of England,dur
+2009,11,5,19,East of England,dur
+2010,10,3,16,East of England,dur
+2011,12,4,17,East of England,dur
+2012,14,5,19,East of England,dur
+2013,13,6,19.25,East of England,dur
+2014,11,5,20.75,East of England,dur
+2015,13,7,19,East of England,dur
+2016,12,5,19,East of England,dur
+2017,13,6,20,East of England,dur
+2018,15.5,7,21.25,East of England,dur
+2019,16,6,22,East of England,dur
+1990,8,4,11,London,dur
+1991,12,7,18,London,dur
+1992,10,6,16,London,dur
+1993,10,4,15,London,dur
+1994,9,4,14,London,dur
+1995,9,5,14,London,dur
+1996,9,4,14,London,dur
+1997,10,4,16,London,dur
+1998,11,5,16,London,dur
+1999,9,4,16,London,dur
+2000,11,4.75,16,London,dur
+2001,11,5,17,London,dur
+2002,12,6,19,London,dur
+2003,11,5,18,London,dur
+2004,12,5,20,London,dur
+2005,13,6,20,London,dur
+2006,13,6,21,London,dur
+2007,13,7,20,London,dur
+2008,12,5,20,London,dur
+2009,14,6,20,London,dur
+2010,14,6,21,London,dur
+2011,14,6.75,22.25,London,dur
+2012,12,6,20,London,dur
+2013,16,8,21.25,London,dur
+2014,16,8,25,London,dur
+2015,17,9,26,London,dur
+2016,20,12,27,London,dur
+2017,20,13.25,27,London,dur
+2018,18,7,26,London,dur
+2019,18,7,25,London,dur
+1992,2,1.5,4.5,North East,dur
+1993,7,4.5,9.5,North East,dur
+1994,2,0.75,5.5,North East,dur
+1995,3,1,7,North East,dur
+1996,3,1,6,North East,dur
+1997,1.5,1,3.75,North East,dur
+1998,3,1,5.25,North East,dur
+1999,2,1,5,North East,dur
+2000,2,1,5,North East,dur
+2001,3,2,6,North East,dur
+2002,5,2,9,North East,dur
+2003,5,2,7,North East,dur
+2004,5,2,8,North East,dur
+2005,5,3,8.5,North East,dur
+2006,5,3,9,North East,dur
+2007,7,3,11,North East,dur
+2008,7,4,11,North East,dur
+2009,7,3,10,North East,dur
+2010,10,4,13,North East,dur
+2011,9,5,14,North East,dur
+2012,8,3,13,North East,dur
+2013,12.5,7,16,North East,dur
+2014,11,7,16.5,North East,dur
+2015,14,9.25,18,North East,dur
+2016,13,7,18,North East,dur
+2017,14,6,19,North East,dur
+2018,13.5,6,20,North East,dur
+2019,15,5,23,North East,dur
+1990,5,2,8,North West,dur
+1991,5,2,9,North West,dur
+1992,5,3,9,North West,dur
+1993,5,2,9,North West,dur
+1994,6,2,10,North West,dur
+1995,7,3,11,North West,dur
+1996,7,3,12,North West,dur
+1997,7,3,12,North West,dur
+1998,8,3,12,North West,dur
+1999,9,4,13,North West,dur
+2000,8,4,13,North West,dur
+2001,9,4,15,North West,dur
+2002,10,5,16,North West,dur
+2003,10,5,16,North West,dur
+2004,10,5,15.75,North West,dur
+2005,10,5,16,North West,dur
+2006,10.5,5,16,North West,dur
+2007,11,6,16,North West,dur
+2008,13,6,18,North West,dur
+2009,14,8,19,North West,dur
+2010,13,8,20,North West,dur
+2011,14,8,20,North West,dur
+2012,13,6,19,North West,dur
+2013,14,6,20.75,North West,dur
+2014,16,10,22,North West,dur
+2015,16,8,23,North West,dur
+2016,18,8.25,24,North West,dur
+2017,19,9,24,North West,dur
+2018,19,11,25,North West,dur
+2019,18,8.75,24,North West,dur
+2002,5,4,6,Northern Ireland,dur
+2003,4,1.25,8,Northern Ireland,dur
+2004,7,5,12,Northern Ireland,dur
+2005,6,4,10,Northern Ireland,dur
+2006,8,5,10.25,Northern Ireland,dur
+2007,8,6,11,Northern Ireland,dur
+2008,10,5,12,Northern Ireland,dur
+2009,10,4,12,Northern Ireland,dur
+2010,12,5,16,Northern Ireland,dur
+2011,8,4,14,Northern Ireland,dur
+2012,8,4,14,Northern Ireland,dur
+2013,8,4,15,Northern Ireland,dur
+2014,7,3,14,Northern Ireland,dur
+2015,8,2.5,15,Northern Ireland,dur
+2016,14,4,17,Northern Ireland,dur
+2017,14,7.5,16.5,Northern Ireland,dur
+2018,9,3,15.5,Northern Ireland,dur
+2019,11,3,18.5,Northern Ireland,dur
+1990,11,7,11,South East,dur
+1991,10,6,12,South East,dur
+1992,8,5,12,South East,dur
+1993,7,2,12,South East,dur
+1994,7,2,12,South East,dur
+1995,6,2,11,South East,dur
+1996,4,1,10,South East,dur
+1997,4,1,10,South East,dur
+1998,3,2,11,South East,dur
+1999,4,2,12,South East,dur
+2000,5,2,12,South East,dur
+2001,5,2,10,South East,dur
+2002,6,3,10,South East,dur
+2003,5.5,4,13,South East,dur
+2004,8,4,15,South East,dur
+2005,9,4,16,South East,dur
+2006,9,5,15,South East,dur
+2007,9,3,14,South East,dur
+2008,9.5,4,16,South East,dur
+2009,10,5,16,South East,dur
+2010,11,5,16,South East,dur
+2011,12,6,17.25,South East,dur
+2012,13,5,18.75,South East,dur
+2013,12,6,19,South East,dur
+2014,14,6,21,South East,dur
+2015,14,5,20,South East,dur
+2016,16,8,21,South East,dur
+2017,16,7.75,22,South East,dur
+2018,16,7.75,21,South East,dur
+2019,13,5,21,South East,dur
+1990,10,4,11,South West,dur
+1991,8,3.5,12,South West,dur
+1992,9,5,15,South West,dur
+1993,7,3,13,South West,dur
+1994,7,3,11,South West,dur
+1995,7,3,12,South West,dur
+1996,8,2,13,South West,dur
+1997,5,2,11,South West,dur
+1998,5,2,13,South West,dur
+1999,5,2,11,South West,dur
+2000,6,3,12,South West,dur
+2001,6,3,11,South West,dur
+2002,7,3,13,South West,dur
+2003,8,4,14,South West,dur
+2004,7,4,13,South West,dur
+2005,8,3.5,13,South West,dur
+2006,9,4,15,South West,dur
+2007,9,4,13,South West,dur
+2008,9,5,14,South West,dur
+2009,10,5,15,South West,dur
+2010,11,4,17,South West,dur
+2011,11,4,16,South West,dur
+2012,10,4,16.75,South West,dur
+2013,13,6,18,South West,dur
+2014,14,6,19,South West,dur
+2015,14,7,21,South West,dur
+2016,16,8,21,South West,dur
+2017,17,7,21.25,South West,dur
+2018,17,9,23,South West,dur
+2019,18,10.75,25,South West,dur
+1990,7,4,11,Wales,dur
+1991,10,2.5,14.5,Wales,dur
+1992,8,3.75,12.25,Wales,dur
+1993,7,2,14,Wales,dur
+1994,9,2,14,Wales,dur
+1995,9,4,15,Wales,dur
+1996,9,6.75,11.25,Wales,dur
+1997,4,1,9.75,Wales,dur
+1998,4,2,9,Wales,dur
+1999,6,3,15,Wales,dur
+2000,7,2,13,Wales,dur
+2001,5,3,9,Wales,dur
+2002,6,3,9,Wales,dur
+2003,5.5,2,10.25,Wales,dur
+2004,10,6,14,Wales,dur
+2005,7,3,12,Wales,dur
+2006,9,4,13,Wales,dur
+2007,8,4,13,Wales,dur
+2008,9.5,4.25,15,Wales,dur
+2009,9,3,17,Wales,dur
+2010,8,2,15,Wales,dur
+2011,13,7,17,Wales,dur
+2012,10,5,18,Wales,dur
+2013,13,6,19,Wales,dur
+2014,14,7,21,Wales,dur
+2015,13,7,21,Wales,dur
+2016,14,8,22,Wales,dur
+2017,16,8.5,22,Wales,dur
+2018,16,9,24,Wales,dur
+2019,15,9,23,Wales,dur
+1992,12,8,18.5,West Midlands,dur
+1993,10,5,15.75,West Midlands,dur
+1994,9,4,11,West Midlands,dur
+1995,16,8,20,West Midlands,dur
+1996,6,3,13,West Midlands,dur
+1997,6,2,12.25,West Midlands,dur
+1998,6,2.75,12.25,West Midlands,dur
+1999,5,2,10,West Midlands,dur
+2000,6,2,11,West Midlands,dur
+2001,7,4,13,West Midlands,dur
+2002,4,2,9,West Midlands,dur
+2003,5,2,11,West Midlands,dur
+2004,9,6.25,9.75,West Midlands,dur
+2005,5.5,2,7,West Midlands,dur
+2006,4,2,7,West Midlands,dur
+2007,7,4,12.25,West Midlands,dur
+2008,7,3,11,West Midlands,dur
+2009,7,3,13,West Midlands,dur
+2010,8.5,3,15,West Midlands,dur
+2011,10,4,15,West Midlands,dur
+2012,12,6,18,West Midlands,dur
+2013,12,5,18,West Midlands,dur
+2014,12,5,17,West Midlands,dur
+2015,13,4.25,19,West Midlands,dur
+2016,13.5,6,19,West Midlands,dur
+2017,13,5,19,West Midlands,dur
+2018,12,5,19,West Midlands,dur
+2019,16,8,22,West Midlands,dur
+1990,4,4,9,Yorkshire & Humber,dur
+1991,8,5,12,Yorkshire & Humber,dur
+1992,4.5,3.5,6.5,Yorkshire & Humber,dur
+1993,4,2,9,Yorkshire & Humber,dur
+1994,3.5,2,6.75,Yorkshire & Humber,dur
+2001,7,3.5,12,Yorkshire & Humber,dur
+2002,6,1.5,11,Yorkshire & Humber,dur
+2003,6,4,12,Yorkshire & Humber,dur
+2004,7,4,12.5,Yorkshire & Humber,dur
+2005,7,3.5,12.5,Yorkshire & Humber,dur
+2006,9,6,15,Yorkshire & Humber,dur
+2007,10.5,6,14.25,Yorkshire & Humber,dur
+2008,10,6,17,Yorkshire & Humber,dur
+2009,10.5,5,15,Yorkshire & Humber,dur
+2010,13,8,17,Yorkshire & Humber,dur
+2011,14,9,19,Yorkshire & Humber,dur
+2012,13,7,18,Yorkshire & Humber,dur
+2013,15,8,19,Yorkshire & Humber,dur
+2014,16,9.75,21,Yorkshire & Humber,dur
+2015,16,12,20,Yorkshire & Humber,dur
+2016,18,12,23,Yorkshire & Humber,dur
+2017,19,11,23,Yorkshire & Humber,dur
+2018,18,10.5,22.5,Yorkshire & Humber,dur
+2019,19,11,24,Yorkshire & Humber,dur
+1990,5,2,10,England,dur
+1991,8,3,12,England,dur
+1992,7,3,12,England,dur
+1993,7,2,12,England,dur
+1994,7,3,12,England,dur
+1995,8,3,13,England,dur
+1996,7,3,12,England,dur
+1997,6,2,12,England,dur
+1998,6,2,13,England,dur
+1999,6,2,12,England,dur
+2000,6,2,12,England,dur
+2001,6,3,13,England,dur
+2002,8,4,14,England,dur
+2003,7,4,14,England,dur
+2004,8,4,14,England,dur
+2005,8,4,15,England,dur
+2006,9,4,15,England,dur
+2007,9,4,14,England,dur
+2008,9,4,15,England,dur
+2009,10,5,16,England,dur
+2010,11,5,16,England,dur
+2011,12,6,17,England,dur
+2012,11,5,17,England,dur
+2013,13,6,19,England,dur
+2014,14,7,20,England,dur
+2015,14,7,21,England,dur
+2016,16,8,21,England,dur
+2017,16,8,22,England,dur
+2018,16,8,23,England,dur
+2019,17,8,23,England,dur
