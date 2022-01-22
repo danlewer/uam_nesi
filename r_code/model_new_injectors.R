@@ -10,14 +10,21 @@ add.alpha <- function(cols, alpha) rgb(t(col2rgb(cols)/255), alpha = alpha)
 #  .................................................
 
 ratios_uam <- read.csv('https://raw.githubusercontent.com/danlewer/uam/main/ratios_of_new_initiators/uam_pairwise_ratios_6oct2021.csv', stringsAsFactors = F)
+ratios_uam_decay <- read.csv('https://raw.githubusercontent.com/danlewer/uam/main/ratios_of_new_initiators/uam_decay_sensitivities_20jan2022.csv', stringsAsFactors = F)
+ratios_uam_startYear <- read.csv('https://raw.githubusercontent.com/danlewer/uam/main/ratios_of_new_initiators/uam_startYear_sensitivities_21jan2022.csv', stringsAsFactors = F)
 ratios_nesi <- read.csv('https://raw.githubusercontent.com/danlewer/uam/main/ratios_of_new_initiators/nesi_pairwise_ratios_2oct2021.csv', stringsAsFactors = F)
-setDT(ratios_uam); setDT(ratios_nesi)
+setDT(ratios_uam); setDT(ratios_nesi); setDT(ratios_uam_decay); setDT(ratios_uam_startYear)
 
 ratios_uam[, survey := 'uam']
 ratios_nesi[, survey := 'nesi']
 
 ratios <- rbind(ratios_uam, ratios_nesi)
 ratios_england <- ratios[region == 'England' & decay == 15]
+
+# /// compare original ratios with decay sensitivities
+compare_ratios <- ratios_uam[region == 'England' & decay == 15, .(y1 = y1, y2 = y2, r1 = ratio)][ratios_uam_decay[, c('y1', 'y2', 'decay', 'ratio')], on = c('y1', 'y2')]
+compare_ratios[, dif := abs(r1 - ratio)]
+compare_ratios[, mean(dif), decay] # v. similar for 'constant'
 
 #  heatmap of pairwise ratios
 #  ..........................
@@ -41,7 +48,7 @@ neg_height <- ys_height * (-neg_range[2] / total_rr)
 ys_neg <- seq(1981, 1981 + neg_height, length.out = 101)
 ys_pos <- seq(1981 + neg_height, 2020, length.out = 101)
 
-emf('new_initiator_ratio_heatmap_6oct2021.emf', height = 7, width = 9, family = 'Corbel')
+emf('new_initiator_ratio_heatmap_20jan2022.emf', height = 7, width = 9, family = 'Candara')
 
 par(xpd = NA, mar = c(4, 4, 2, 8))
 plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(1980, 2020), axes = F, xlab = NA, ylab = NA)
@@ -89,6 +96,18 @@ set.seed(14)
 mc_results <- lapply(split(ratios, ratios$group), mc)
 mc_estimates <- lapply(mc_results, function (x) apply(x, 1, quantile, probs = c(0.025, 0.5, 0.975), na.rm = T))
 
+# decay sensitivity estimates
+
+set.seed(77)
+mc_results_decay <- lapply(split(ratios_uam_decay, ratios_uam_decay$decay), mc)
+mc_estimates_decay <- lapply(mc_results_decay, function (x) apply(x, 1, quantile, probs = c(0.025, 0.5, 0.975), na.rm = T))
+
+# start year sensitivity estimates
+
+set.seed(811)
+mc_results_startYear <- lapply(split(ratios_uam_startYear, ratios_uam_startYear$startYear), mc)
+mc_estimates_startYear <- lapply(mc_results_startYear, function (x) apply(x, 1, quantile, probs = c(0.025, 0.5, 0.975), na.rm = T))
+
 #  plot of main scenario
 #  .....................
 
@@ -96,7 +115,7 @@ cols <- brewer.pal(3, 'Set1')[1:2]
 cols2 <- add.alpha(cols, 0.2)
 rrs <- c(0.1, 0.2, 0.4, 0.7, 1, 2, 3, 5)
 
-emf('main_scenario_ratio_1980_6oct2021.emf', height = 5, width = 8, family = 'Corbel')
+emf('main_scenario_ratio_1980_20jan2022.emf', height = 5, width = 8, family = 'Candara')
 
 par(mar = c(4, 4, 0, 11), xpd = NA)
 plot(1, type = 'n', xlim = c(1980, 2019), ylim = range(log(rrs)), axes = F, xlab = NA, ylab = NA)
@@ -135,7 +154,7 @@ nesi_sens <- mc_estimates[paste0('nesi_1/', 10:20)]
 uam_final_values <- sapply(uam_sens, function(x) x[2,40])
 nesi_final_values <- sapply(nesi_sens, function(x) x[2,40])
 
-emf('lambda_sensitivty_analysis_6Oct2021.emf', height = 10, width = 7, family = 'Corbel')
+emf('lambda_sensitivty_analysis_20jan2022.emf', height = 10, width = 7, family = 'Candara')
 
 par(mfrow = c(2, 1), mar = c(4, 4, 0, 6), xpd = NA)
 
@@ -152,9 +171,9 @@ axis(1, 1980 + 5 * 0:7, pos = log(rrs[1]), tck = -0.03)
 axis(2, log(rrs), rrs, pos = 1980, las = 2)
 rect(1980, log(rrs[1]), 2019, log(max(rrs)))
 title(ylab = 'Ratio of people injecting\nfor the first time, vs. 1980', line = 2)
-text(2020, log(uam_final_values), 20:10, col = cols, adj = 0, cex = 0.7)
+text(2020, log(uam_final_values), 10:20, col = cols, adj = 0, cex = 0.7)
 text(2020, max(log(uam_final_values)) + 0.2, 'Average duration\nof injecting', adj = 0, cex = 0.7)
-text(1980.5, log(2.5), 'UAM (England, Wales and\nNorthern Ireland', adj = 0)
+text(1980.5, log(2.5), 'UAM (England, Wales and\nNorthern Ireland)', adj = 0)
 
 # nesi
 
@@ -170,9 +189,34 @@ axis(2, log(rrs), rrs, pos = 1980, las = 2)
 rect(1980, log(rrs[1]), 2019, log(max(rrs)))
 title(xlab = 'Year', line = 2.5)
 title(ylab = 'Ratio of people injecting\nfor the first time, vs. 1980', line = 2)
-text(2020, log(nesi_final_values), 20:10, col = cols, adj = 0, cex = 0.7)
+text(2020, log(nesi_final_values), 10:20, col = cols, adj = 0, cex = 0.7)
 text(2020, max(log(nesi_final_values)) + 0.2, 'Average duration\nof injecting', adj = 0, cex = 0.7)
 text(1980.5, log(2.5), 'NESI (Scotland)', adj = 0)
+
+dev.off()
+
+# sensitivity on lambda changing over time
+
+emf('lambda_sensitivty_analysis_2_20jan2022.emf', height = 5, width = 7, family = 'Candara')
+
+par(mar = c(4, 4, 1, 10), xpd = NA)
+
+cols <- colorRampPalette(c('blue', 'red'))(length(1:3))
+plot(1, type = 'n', xlim = c(1980, 2019), ylim = range(log(rrs)), axes = F, xlab = NA, ylab = NA)
+segments(1980, 0, 2019)
+for (i in seq_along(1:3)) {
+  pd <- log(mc_estimates_decay[[i]])
+  lines(1980:2019, pd[2,], col = cols[i])
+}
+axis(1, 1980:2019, pos = log(rrs[1]), labels = F, tck = -0.01)
+axis(1, 1980 + 5 * 0:7, pos = log(rrs[1]), tck = -0.03)
+axis(2, log(rrs), rrs, pos = 1980, las = 2)
+rect(1980, log(rrs[1]), 2019, log(max(rrs)))
+title(xlab = 'Year', line = 2.5)
+title(ylab = 'Ratio of people injecting\nfor the first time, vs. 1980', line = 2)
+ys <- seq(0, 1, length.out = 3)
+segments(2020, ys, 2021.5, ys, col = cols)
+text(2022, ys, c('Constant at\n1/15 per year', 'Decreasing from 1/10 to\n1/20 per year', 'Increasing from 1/20 to\n1/10 per year'), adj = 0)
 
 dev.off()
 
@@ -226,7 +270,7 @@ mm <- function(ratios, new1980 = 10000, decay = 1/15) {
 
 # -- estimate regional and national cohort sizes with prediction intervals --
 
-find_multiple_cohorts <- function(ratio_matrix, log.target, log.target.sd, targetYear = 2011, test_vals = 0:20 * 1000) {
+find_multiple_cohorts <- function(ratio_matrix, log.target, log.target.sd, targetYear = 2011, test_vals = 0:20 * 1000, printTestVal = T) {
   B <- ncol(ratio_matrix)
   tg <- round(exp(rnorm(B, mean = log.target, sd = log.target.sd)), 0)
   y <- sapply(test_vals, function(x) {
@@ -366,6 +410,34 @@ mtext('Number of people injecting drugs for the first time', outer = T, side = 2
 
 dev.off()
 
+#  plot of sensitivites for main article
+#  .....................................
+
+uam_sens_abs <- lapply(cohort_size[paste0('uam_1/', 10:20)], function (x) x[,2])
+cols <- colorRampPalette(c('blue', 'red'))(length(10:20))
+
+cairo_pdf('Figure5.pdf', width = 9, height = 6, family = 'Candara')
+
+par(mar = c(5, 5, 1, 10), xpd = NA)
+plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(0, 14000), axes = F, xlab = NA, ylab = NA)
+rect(1980, 0, 2019, 14000)
+axis(1, 1980:2019, pos = 0, labels = F, tck = -0.01)
+axis(1, 1980 + 5 * 0:7, pos = 0, tck = -0.02)
+axis(2, seq(0, 14000, 2000), labels = prettyNum(seq(0, 14000, 2000), big.mark = ','), pos = 1980, las = 2)
+lwds <- rep(1, 11)
+lwds[6] <- 3
+mapply(lines, x = list(1980:2019), y = uam_sens_abs, col = cols, lwd = lwds)
+ys <- seq(3500, 10500, length.out = 11)
+segments(2020, ys, 2022, ys, col = cols, lwd = lwds)
+labs <- paste0('1/', 10:20)
+labs[6] <- '1/15 (main results)'
+text(2023, ys, labs, adj = 0)
+text(2020, max(ys) * 1.15, 'Proportion that stop\ninjecting per year', adj = 0)
+title(xlab = 'Year', line = 2)
+title(ylab = 'Number of people injecting drugs for the first time')
+
+dev.off()
+
 #  table of cohort sizes for supplementary information
 #  ...................................................
 
@@ -420,5 +492,90 @@ rect(2020, ys[1], 2022, ys[3], col = cols2[1], border = NA)
 rect(2020, ys[4], 2022, ys[6], col = cols2[2], border = NA)
 segments(2020, ys[c(2, 5)], x1 = 2022, col = cols, lwd = 2)
 text(2022.5, ys[c(2, 5)], c('England\n(all data)', 'England\n(2008-2019)'), adj = 0)
+
+dev.off()
+
+#  :::::::::::::::::::::::::::::::::::::::::
+#  plot of senstivities by survey start year
+#  .........................................
+
+# -- This code takes a long time to run, so the results are saved as an 'Rdata' object and loaded
+# set.seed(332)
+# mc_cohort_startYear <- mapply(find_multiple_cohorts,
+#                               ratio_matrix = mc_results_startYear,
+#                               log.target = targets2[label == 'uam_England', log.target],
+#                               log.target.sd = targets2[label == 'uam_England', log.CIsd],
+#                               targetYear = targets2[label == 'uam_England', year],
+#                               test_vals = list(10 * seq_len(2000)),
+#                               SIMPLIFY = F)
+# save(mc_cohort_startYear, file = 'mc_cohort_startYear_21jan2022.Rdata')
+
+load(url('https://github.com/danlewer/uam_nesi/blob/main/ratios_of_new_initiators/mc_cohort_startYear_21jan2022.Rdata?raw=true'))
+
+cohort_size_startYear <- lapply(mc_cohort_startYear, function(x) apply(x, 1, quantile, probs = c(0.025, 0.5, 0.975), na.rm = T))
+cohort_size_startYear <- lapply(cohort_size_startYear, t)
+cohort_size_startYear <- lapply(cohort_size_startYear, data.frame)
+cohort_size_startYear <- lapply(cohort_size_startYear, `names<-`, value = c('lower', 'point', 'upper'))
+
+#  -- point estimates --
+
+test_vals <- 10 * seq_len(2000)
+point_ratios <- lapply(mc_results_startYear, function(x) apply(x, 1, median, na.rm = T))
+vals1980 <- sapply(as.character(1990:2019), function(z) test_vals[which.min(abs(sapply(test_vals, function(x) mm(point_ratios[[z]], new1980 = x)[1980:2019 == 2011]) - targets2[label == 'uam_England', target]))])
+point_estimates <- data.table(cbind(year = 1980:2019, round(mapply(`*`, a = point_ratios, b = vals1980), -1)))
+for(i in as.character(1990:2019)) {
+  cohort_size_startYear[[i]]$point <- point_estimates[[i]]
+}
+
+# -- plot --- 
+
+emf('sensitivity_survey_years_included_21jan2022.emf', height = 8, width = 15, family = 'Candara')
+
+par(mar = c(5, 3, 1, 12), xpd = NA, mfrow = c(1, 2), oma = c(0, 3, 0, 0))
+
+cols <- colorRampPalette(c(brewer.pal(3, 'Set1')[1], 'yellow', brewer.pal(3, 'Set1')[2]))(30)
+
+plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(0, 15000), axes = F, xlab = NA, ylab = NA)
+rect(1980, 0, 2019, 15000)
+axis(1, 1980:2019, pos = 0, labels = F, tck = -0.01)
+axis(1, 1980 + 5 * 0:7, pos = 0, tck = -0.02)
+axis(2, 0:5 * 3000, labels = prettyNum(0:5 * 3000, big.mark = ','), pos = 1980, las = 2)
+lwds <- rep(0.2, 30)
+lwds[c(1, 19)] <- 3
+ltys <- rep(1, 30)
+ltys[c(1, 19)] <- 1
+mapply(lines, x = list(1980:2019), y = lapply(cohort_size_startYear, function (x) x[,2]), col = cols, lwd = lwds, lty = ltys)
+ys <- seq(0, 14000, length.out = 30)
+segments(2020, ys, 2022, ys, col = cols, lwd = lwds, lty = ltys)
+labs <- paste0(1990:2019, ':2019')
+labs[1] <- '1990:2019 (main results)'
+labs[19] <- '2008:2019 (sensitivity)'
+labs[length(labs)] <- '2019'
+text(2023, ys, labs, adj = 0)
+text(2020, max(ys) * 1.065, 'Survey years\nincluded', adj = 0)
+title(xlab = 'Year', line = 2)
+title(ylab = 'Number of people injecting drugs for the first time', line = 3.5)
+text(1999.5, 15500, 'Point estimates')
+
+cols <- brewer.pal(3, 'Set1')[1:2]
+cols2 <- add.alpha(cols, 0.2)
+
+plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(0, 15000), axes = F, xlab = NA, ylab = NA)
+rect(1980, 0, 2019, 15000)
+axis(1, 1980:2019, pos = 0, labels = F, tck = -0.01)
+axis(1, 1980 + 5 * 0:7, pos = 0, tck = -0.02)
+axis(2, 0:5 * 3000, labels = prettyNum(0:5 * 3000, big.mark = ','), pos = 1980, las = 2)
+polygon(x = c(1980:2019, 2019:1980), y = c(cohort_size_startYear$`1990`$lower, rev(cohort_size_startYear$`1990`$upper)), col = cols2[1], border = NA)
+polygon(x = c(1980:2019, 2019:1980), y = c(cohort_size_startYear$`2019`$lower, rev(cohort_size_startYear$`2019`$upper)), col = cols2[2], border = NA)
+lines(1980:2019, cohort_size_startYear$`1990`$point, col = cols[1])
+lines(1980:2019, cohort_size_startYear$`2019`$point, col = cols[2])
+ys <- seq(6000, 9000, length.out = 6)
+rect(2020, ys[c(1, 4)], 2022, ys[c(3, 6)], col = cols2, border = NA)
+segments(2020, ys[c(2, 5)], 2022, ys[c(2, 5)], col = cols)
+text(2022.5, ys[c(2, 5)], c('1990:2019\n(main results)', '2019 only'), adj = 0)
+text(2020, max(ys) * 1.1, 'Survey years\nincluded', adj = 0)
+title(xlab = 'Year', line = 2)
+title(ylab = 'Number of people injecting drugs for the first time', line = 3.5)
+text(1999.5, 15500, 'Point estimates and 95% prediction intervals')
 
 dev.off()
