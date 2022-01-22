@@ -36,7 +36,10 @@ panel_plots <- function (models = reg, actuals = act, REGIONS = regions, parm, Y
       points(year, lower, pch = 4)
       points(year, upper, pch = 4)
     })
-    text(mean(ndy), YLIM[2] * 0.95, i)
+    lab <- if (i %in% c('England', 'Scotland', 'Wales')) '' else 'England: '
+    lab <- if (i %in% c('Greater Glasgow & Clyde', 'Lothian & Tayside', 'Other regions of Scotland')) 'Scotland: ' else lab
+    lab <- paste0(lab, i)
+    text(mean(ndy), YLIM[2] * 0.95, lab)
     rect(min(ndy), YLIM[1], max(ndy), YLIM[2])
     if (match(i, regions) %in% ylabs) axis(2, gridy, pos = min(ndy), las = 2)
     if (match(i, regions) %in% xlabs) axis(1, gridx, pos = YLIM[1])
@@ -47,7 +50,7 @@ panel_plots <- function (models = reg, actuals = act, REGIONS = regions, parm, Y
   rect(0, ys[3] - 1, 2, ys[3] + 1, col = COL, border = NA)
   points(1, ys[2])
   points(1, ys[1], pch = 4)
-  text(2.25, ys, c('Actual IQR', 'Actual median', 'Modelled IQR', 'Modelled median\n(95% CI)'), adj = 0)
+  text(2.25, ys, c('Sample IQR', 'Sample median', 'Modelled IQR', 'Modelled median\n(95% CI)'), adj = 0)
   if (!is.na(YLAB)) {mtext(YLAB, side = 2, outer = T, line = 3, cex = 0.8)}
   if (!is.na(XLAB)) {mtext(XLAB, side = 1, outer = T, line = 3, cex = 0.8)}
 }
@@ -56,8 +59,8 @@ panel_plots <- function (models = reg, actuals = act, REGIONS = regions, parm, Y
 #  read data
 #  .........
 
-act_uam <- read.csv(url("https://raw.githubusercontent.com/danlewer/uam_nesi/main/quantiles/uam_actual_quantiles_2oct2021.csv"), stringsAsFactors = F)
-reg_uam <- read.csv(url("https://raw.githubusercontent.com/danlewer/uam_nesi/main/quantiles/uam_modelled_quantiles_2oct2021.csv"), stringsAsFactors = F)
+act_uam <- read.csv(url("https://raw.githubusercontent.com/danlewer/uam_nesi/main/quantiles/uam_actual_quantiles_19jan2022.csv"), stringsAsFactors = F)
+reg_uam <- read.csv(url("https://raw.githubusercontent.com/danlewer/uam_nesi/main/quantiles/uam_modelled_quantiles_19jan2022.csv"), stringsAsFactors = F)
 act_nesi <- read.csv(url("https://raw.githubusercontent.com/danlewer/uam_nesi/main/quantiles/nesi_actual_quantiles_2oct2021.csv"), stringsAsFactors = F)
 reg_nesi <- read.csv(url("https://raw.githubusercontent.com/danlewer/uam_nesi/main/quantiles/nesi_modelled_quantiles_2oct2021.csv"), stringsAsFactors = F)
 setDT(act_uam); setDT(reg_uam); setDT(act_nesi); setDT(reg_nesi)
@@ -75,7 +78,7 @@ reg$region[reg$region == 'GCC'] <- 'Greater Glasgow & Clyde'
 reg$region[reg$region == 'Lothian_and_Tayside'] <- 'Lothian & Tayside'
 reg$region[reg$region == 'Other'] <- 'Other regions of Scotland'
 
-regions <- c(c('England', 'Scotland'), setdiff(unique(act$region), c('England', 'Scotland')))
+regions <- c(c('England', 'Scotland', 'Wales'), setdiff(unique(act$region), c('England', 'Scotland', 'Wales')))
 regions <- setdiff(regions, 'Northern Ireland')
 
 act <- split(act, f = act$region)
@@ -85,16 +88,46 @@ reg <- split(reg, f = reg$region)
 #  panel plots by region
 #  .....................
 
-emf('age_by_region_panel_6oct2021.emf', height = 8, width = 8, family = 'Corbel')
+emf('age_by_region_panel_19jan2021.emf', height = 8, width = 8, family = 'Candara')
 panel_plots(parm = 'age', YLIM = c(20, 50), ndy = 1990:2019)
 dev.off()
 
-emf('age_initiation_panel_6oct2021.emf', height = 8, width = 8, family = 'Corbel')
+emf('age_initiation_panel_19jan2021.emf', height = 8, width = 8, family = 'Candara')
 panel_plots(parm = 'age_init', YLIM = c(15, 45), ndy = 1990:2019, YLAB = 'Age first injected', XLAB = 'Year first injected')
 dev.off()
 
-emf('duration_injecting_by_region_panel_6oct2021.emf', height = 8, width = 8, family = 'Corbel')
+emf('duration_injecting_by_region_panel_19jan2021.emf', height = 8, width = 8, family = 'Candara')
 panel_plots(parm = 'dur', YLIM = c(0, 25), ndy = 1990:2019, YLAB = 'Duration of injecting')
+dev.off()
+
+#  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  effect of limiting to those initiated in past 3 years on age of initiation
+#  ..........................................................................
+
+sampleInit <- dcast(act$England[parameter %in% c('age_init_whole_sample', 'age_init') & year >= 1990], year ~ parameter, value.var = 'md')
+sampleInit[, age_init := age_init + 0.1]
+sampleInit[, age_init_whole_sample - 0.1]
+modelInit <- dcast(reg$England[parameter %in% c('age_init_whole_sample', 'age_init') & tau == 0.5], year ~ parameter, value.var = 'fit')
+
+cols <- brewer.pal(3, 'Set1')
+
+emf('age_of_initiation_whole_vs_past3year_19jan2022.emf', height = 5, width = 6, family = 'Candara')
+
+plot(1, type = 'n', xlim = c(1990, 2019), ylim = c(18, 35), xlab = NA, ylab = NA, axes = F)
+rect(1989, 18, 2020, 35)
+with(modelInit, {
+  lines(year, age_init, col = cols[1])
+  lines(year, age_init_whole_sample, col = cols[2])
+})
+with(sampleInit, {
+  points(year, age_init, pch = 4, col = cols[1])
+  points(year, age_init_whole_sample, pch = 4, col = cols[2])
+})
+axis(1, seq(1990, 2015, 5), pos = 18)
+axis(2, c(18, 20, 25, 30, 35), pos = 1989, las = 2)
+title(xlab = 'Year of initiation')
+title(ylab = 'Age of initiation')
+
 dev.off()
 
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -142,7 +175,7 @@ iy <- split(iy, f = iy$year)
 
 cols <- colorRampPalette(brewer.pal(11, 'Spectral'))(length(ndy))
 
-cairo_pdf('duration_injecting_histograms_7oct2021.pdf', height = 6, width = 12, family = 'Corbel')
+cairo_pdf('Figure3.pdf', height = 6, width = 12, family = 'Candara')
 
 par(mfrow = c(1, 2), mar = c(0, 0, 0, 0), oma = c(4, 4, 0, 7), xpd = NA)
 
@@ -192,7 +225,7 @@ iy <- split(iy, f = iy$year)
 
 cols <- colorRampPalette(brewer.pal(11, 'Spectral'))(length(ndy))
 
-emf('nesi_duration_injecting_histograms_6oct2021.emf', height = 6, width = 12, family = 'Corbel')
+emf('nesi_duration_injecting_histograms_22jan2022.emf', height = 6, width = 12, family = 'Candara')
 
 par(mfrow = c(1, 2), mar = c(0, 0, 0, 0), oma = c(4, 4, 0, 7), xpd = NA)
 
@@ -283,5 +316,32 @@ segments(1, ys[3], 3, ys[3], col = cols[2], lwd = 1)
 points(2, ys[1], col = cols[2], pch = 4)
 text(4, ys[1:4], xlab, adj = 0)
 text(1, ys[5], 'Scotland', adj = 0, font = 2)
+
+dev.off()
+
+#  ::::::::::::::::::::::::::::::::::::::::::::::::::
+#  sensitivity analysis by averaging regional results
+#  ..................................................
+
+parms <- c('age', 'age_init', 'dur')
+
+sens_regions <- reg_uam[!(region %in% c('England', 'Wales', 'Northern Ireland')) & tau == 0.5 & parameter != 'age_init_whole_sample', .(mean_reg = mean(fit)), c('year', 'parameter')][
+  reg_uam[region == 'England' & tau == 0.5 & parameter != 'age_init_whole_sample', c('year', 'fit', 'parameter')], on = c('year', 'parameter')]
+sens_regions[, parameter := factor(parameter, c('age', 'age_init', 'dur'), c('Age of participants', 'Age of initiation', 'Duration of injecting'))]
+sens_regions <- split(sens_regions, f = sens_regions$parameter)
+
+cols <- brewer.pal(3, 'Set1')
+
+emf('sensitivity_averaging_regions_20jan2022.emf', height = 4, width = 9, family = 'Candara')
+
+par(mfrow = c(1, 3))
+lapply(sens_regions, function (x) {
+  with(x, {
+    plot(1, type = 'n', xlim = c(1990, 2019), ylim = c(0, 40), xlab = NA, ylab = NA)
+    lines(year, fit, col = cols[1])
+    lines(year, mean_reg, col = cols[2])
+    title(main = x$parameter[1])
+  })
+})
 
 dev.off()
