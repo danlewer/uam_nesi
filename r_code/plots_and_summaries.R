@@ -40,7 +40,11 @@ panel_plots <- function (models = reg, actuals = act, REGIONS = regions, parm, Y
     lab <- if (i %in% c('Greater Glasgow & Clyde', 'Lothian & Tayside', 'Other regions of Scotland')) 'Scotland: ' else lab
     lab <- paste0(lab, i)
     text(mean(ndy), YLIM[2] * 0.95, lab)
-    rect(min(ndy), YLIM[1], max(ndy), YLIM[2])
+    # using 'segments' here rather than 'rect' to ensure correct rendering in PDF
+    segments(min(ndy), YLIM[1], x1 = max(ndy))
+    segments(min(ndy), YLIM[2], x1 = max(ndy))
+    segments(min(ndy), YLIM[1], y1 = YLIM[2])
+    segments(max(ndy), YLIM[1], y1 = YLIM[2])
     if (match(i, regions) %in% ylabs) axis(2, gridy, pos = min(ndy), las = 2)
     if (match(i, regions) %in% xlabs) axis(1, gridx, pos = YLIM[1])
   }
