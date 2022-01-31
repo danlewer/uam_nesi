@@ -1,5 +1,6 @@
 library(RColorBrewer)
 library(data.table)
+library(devEMF)
 
 load(url('https://github.com/danlewer/uam_nesi/raw/main/misc/previousParticipationSensitivities_27jan2022.Rdata'))
 
@@ -7,7 +8,10 @@ cols <- brewer.pal(3, 'Set1')
 
 plotPrevPartSens <- function (p, col = cols, ylim = c(0, 50), xlim = c(1990, 2019), main = 'Age', ...) {
   plot(1, type = 'n', xlim = xlim, ylim = ylim, axes = F, xlab = NA, ylab = NA, ...)
-  rect(xlim[1], ylim[1], xlim[2], ylim[2])
+  # segments used here instead of 'rect' to ensure proper rendering in PDF
+  segments(xlim[1], ylim[1], x1 = xlim[2])
+  segments(xlim[1], ylim[2], x1 = xlim[2])
+  segments(xlim[2], ylim[1], y1 = ylim[2])
   axis(1, seq(1990, 2015, 5), pos = ylim[1])
   with(p[sens == 'all'], {
     points(year, sample, col = cols[1])
