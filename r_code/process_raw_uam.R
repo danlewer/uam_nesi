@@ -418,3 +418,38 @@ weighted_ratio[, ratio_lci := exp(logratio - qnorm(0.975) * sqrt(var_log_ratio))
 weighted_ratio[, ratio_uci := exp(logratio + qnorm(0.975) * sqrt(var_log_ratio))]
 
 fwrite(weighted_ratio, 'uam_pairwise_ratios_1april2022.csv')
+
+
+#  :::::::::::::::::::::::::::::::::::::::::::::::
+#  sensitivity analysis of changing the start year
+#  ...............................................
+
+start_year_input <- 1990:2019
+
+set.seed(619)
+bs <- mapply(pairwise_bs_variance,
+             decay = 15,
+             minSurveyYear = start_year_input,
+             region = list(regions_england),
+             name = start_year_input,
+             B = 1000L,
+             SIMPLIFY = F)
+for(i in seq_along(bs)) {bs[[i]]$startYear <- start_year_input[i]}
+bs <- rbindlist(bs)
+
+#  do inverse variance weighting
+#  .............................
+
+bs[, iv := 1/v]
+bs <- bs[, .(total_iv = sum(iv)), c('y1', 'y2', 'startYear')][bs, on = c('y1', 'y2', 'startYear')]
+bs[, iwv := iv / total_iv]
+bs[, logratio := log(ratio)]
+
+# the variance of the combined effect is defined as the reciprocal of the sum of the weights
+
+weighted_ratio <- bs[, .(logratio = sum(logratio * iwv), var_log_ratio = 1/sum(iv)), c('y1', 'y2', 'startYear')]
+weighted_ratio[, ratio := exp(logratio)]
+weighted_ratio[, ratio_lci := exp(logratio - qnorm(0.975) * sqrt(var_log_ratio))]
+weighted_ratio[, ratio_uci := exp(logratio + qnorm(0.975) * sqrt(var_log_ratio))]
+
+fwrite(weighted_ratio, 'uam_startYear_sensitivities_1april2022.csv')
