@@ -219,7 +219,7 @@ fwrite(iy[, c('yr', 'year_init', 'pc')], 'results/nesi_histogram_yearInit_2oct20
 #  pairwise ratios for modeling of cohort sizes
 #  ............................................
 
-pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff), name = NA, printProgress = T) {
+pairwise_bs_variance <- function(decay = 15, B = 10, region = unique(d$govoff), name = NA, printProgress = T) {
   
   if (printProgress) {print(name)}
   
@@ -231,7 +231,7 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
     y <- y[y2 > y1]
     y <- data.table(y1 = x$year_init, n1 = x$N)[y, on = 'y1']
     y <- data.table(y2 = x$year_init, n2 = x$N)[y, on = 'y2']
-    y[, half := (1-decay)^(y2-y1)]
+    y[, half := exp(-(y2-y1)/decay)]
     y[, n1_rescale := n1/half]
     y[, ratio := n2 / n1_rescale]
     y[, syear := z]
@@ -253,7 +253,7 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
     y <- data.table(y1 = x$year_init, n1 = x$N, b = x$b)[y, on = c('y1', 'b')]
     y <- data.table(y2 = x$year_init, n2 = x$N, b = x$b)[y, on = c('y2', 'b')]
     y <- y[!is.na(n1) & !is.na(n2)]
-    y[, half := (1-decay)^(y2-y1)]
+    y[, half := exp(-(y2-y1)/decay)]
     y[, n1_rescale := n1/half]
     y[, ratio := n2 / n1_rescale]
     y[, logratio := log(ratio)]
@@ -270,11 +270,11 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
 # input values
 # first regions, then Scotland, then decay values
 
-decay_values <- 1/(10:20)
+decay_values <- 10:20
 regions <- d[!is.na(area), unique(area)]
 regions_input <- c(as.list(regions), rep(list(regions), length(decay_values) + 1))
 decay_input <- c(rep(1/15, length(regions)+1), decay_values)
-names_input <- c(regions, 'Scotland', paste0('1/', 10:20))
+names_input <- c(regions, 'Scotland', 10:20)
 
 # bootstrap pairwise ratios and variances
 
@@ -304,4 +304,4 @@ weighted_ratio[, ratio := exp(logratio)]
 weighted_ratio[, ratio_lci := exp(logratio - qnorm(0.975) * sqrt(var_log_ratio))]
 weighted_ratio[, ratio_uci := exp(logratio + qnorm(0.975) * sqrt(var_log_ratio))]
 
-fwrite(weighted_ratio, 'results/nesi_pairwise_ratios_2oct2021.csv')
+fwrite(weighted_ratio, 'results/nesi_pairwise_ratios_1april2022.csv')
