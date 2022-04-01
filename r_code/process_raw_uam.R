@@ -7,6 +7,8 @@
 # 6. Estimates modelled quantiles
 # 7. Estimates pairwise ratios for modelling of number injecting for the first time each year
 
+setwd("H:/uam_age_trends")
+
 # -- libraries --
 
 library(data.table) # for reading and manipulating data
@@ -16,21 +18,28 @@ library(devEMF) # for enhanced metafile device (graphics)
 
 # do quantile regression for interquartile range and predict confidence intervals
 
-qm <- function(d, outcome = 'age', exposure = 'year', q = c(0.25, 0.5, 0.75), pyears = 1990:2019) {
+qm <- function(d, outcome = 'age', exposure = 'year', q = c(0.25, 0.5, 0.75), pyears = 1990:2019, sampleVal = F) {
   f <- as.formula(paste0(outcome, '~poly(', exposure, ',2)'))
-  rbindlist(lapply(q, function(x) {
+  modelVals <- rbindlist(lapply(q, function(x) {
     m <- rq(f, data = d, tau = x)
     nd <- data.table(exposure = pyears)
     names(nd)[1] <- exposure
     cbind(nd, predict(m, newdata = nd, interval = 'confidence'), tau = x)
   }))
+  if (sampleVal) {
+    sampleVals <- d[get(exposure) %in% pyears, .(sample = quantile(get(outcome), probs = q)), by = exposure]
+    sampleVals$tau <- rep(q, length(pyears))
+    return(sampleVals[modelVals, on = c('tau', exposure)])
+  } else {
+    return(modelVals)
+  }
 }
 
 #  :::::::::
 #  read data
 #  .........
 
-d <- fread("uam_age_1oct2021.csv")
+d <- fread("uam_age_27jan2022.csv")
 d[, id := .I]
 
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -85,35 +94,7 @@ d[, inyM := fifelse(is.na(injyI), 'missing', injyI)]
 d[, inyM := factor(inyM, c('Yes', 'No', 'missing'))]
 
 recent_injecting <- dcast(d, year ~ inyM, value.var = 'year', fun.aggregate = length)
-top <- t(apply(recent_injecting[, -'year'], 1, cumsum)) / rowSums(recent_injecting[, -'year'])
-colnames(top) <- c('top_yes', 'top_no', 'top_missing')
-recent_injecting <- cbind(recent_injecting, top)
-
-recent_plot <- melt(recent_injecting, id.vars = 'year', measure.vars = c('top_yes', 'top_no', 'top_missing'), variable.name = 'recent', value.name = 'top')
-recent_plot[, recent := gsub('top_', '', recent)]
-recent_plot <- recent_plot[order(year)]
-recent_plot[, bottom := shift(top, fill = 0), year]
-cols <- brewer.pal(3, 'Pastel1')
-recent_plot[, col := as.character(factor(recent, c('yes', 'no', 'missing'), cols))]
-xlab <- seq(1990, 2015, 5)
-
-emf('injected_past_year_2oct2021.emf', height = 3.5, width = 6, family = 'Corbel')
-
-par(mar = c(5, 4, 0, 7), xpd = NA)
-plot(1, type = 'n', xlim = c(1990, 2020), ylim = c(0, 1), axes = F, xlab = NA, ylab = NA)
-with(recent_plot, rect(year, bottom, year + 1, top, col = col))
-axis(1, 1990:2020, labels = F, pos = 0, tck = -0.03)
-axis(1, xlab, labels = F, pos = 0, tck = -0.06)
-axis(1, xlab + 2.5, paste0(xlab, '\n', '-', xlab+4), tick = F, xlab, pos = -0.03)
-axis(2, 0:5/5, paste0(0:5 * 20, '%'), las = 2, pos = 1990)
-title(xlab = 'Survey year')
-title(ylab = 'Percent of participants')
-ys <- seq(0.3, 0.7, length.out = 4)
-rect(2021, ys[-length(ys)], 2022, ys[-1], col = cols)
-text(2022.5, ys[-length(ys)] + diff(ys)/2, c('Yes', 'No', 'Missing'), adj = 0)
-text(2021, max(ys) + 0.12, 'Injected in\npast year', adj = 0)
-
-dev.off()
+# fwrite(recent_injecting, 'recent_injecting.csv')
 
 #  :::::::::::::::
 #  drop ineligible
@@ -125,20 +106,20 @@ d[!(injyI == 'Yes' | year %in% c(1990:1992)), .N] # 17014
 # did not inject in the past year
 
 d <- d[injyI == 'Yes' | year %in% c(1990:1992)]
-nrow(d) # 69928
+nrow(d) # 69947
 
 # missing age, duration, age started, or year started
 
 d[, missing := rowSums(is.na(cbind(ageI, injdurI, fyearI, fageI))) > 0]
-d[, sum(missing)] # 3272
+d[, sum(missing)] # 3274
 d <- d[missing == F]
-nrow(d) # 66655
+nrow(d) # 66673
 
 # implausible values
 
 d[(injdurI < 0 | ageI < 10 | fyearI > year), .N] # 127
 d <- d[!(injdurI < 0 | ageI < 10 | fyearI > year)]
-nrow(d) # 66528
+nrow(d) # 66655
 
 #  ::::::::::::
 #  missing data
@@ -175,17 +156,26 @@ dv <- function (v) {
 }
 
 desctab <- rbindlist(lapply(c('total', 'gen', 'govoff', 'yearGroup'), dv))
-fwrite(desctab, 'descriptive_table_2oct2021.csv')
+fwrite(desctab, 'descriptive_table_1april2022.csv')
+
+# proportion injecting heroin
+
+heroin <- dcast(d, year ~ heroin1, fun.aggregate = length)
+names(heroin) <- c('year', 'missing', 'no', 'yes')
+heroin <- heroin[, c('year', 'yes', 'no', 'missing')]
+heroin[, number_not_missing := yes + no]
+heroin[, pc_heroin := yes / number_not_missing * 100]
+fwrite(heroin, 'pc_using_heroin_1april2022.csv')
 
 #  :::::
 #  drugs
 #  .....
 
 table(d$heroin1, useNA = 'always')
-#    No   Yes  <NA> 
-#  1801 19989 44738
+#   No   Yes  <NA> 
+#   1801 19989 44755 
 prop.table(table(d$heroin1))
-#         No        Yes 
+# No         Yes 
 # 0.08265259 0.91734741
 
 #  :::::::::::::::::::
@@ -226,6 +216,24 @@ for (i in seq_along(ini_act)) {ini_act[[i]]$region <- names(ini_act)[i]}
 ini_reg <- rbindlist(ini_reg)
 ini_act <- rbindlist(ini_act)
 
+# including all participants
+
+ndy <- 1980:2019
+
+d_ini2 <- d[, c('govoff', 'fyearI', 'fageI', 'year')]
+d_ini2 <- d_ini2[fyearI %in% ndy]
+d_ini2 <- c(split(d_ini2, f = d_ini2$govoff), England = list(d_ini2))
+
+# model and actual values
+
+ini_reg2 <- lapply(d_ini2, qm, exposure = 'fyearI', outcome = 'fageI', pyears = 1990:2019)
+for (i in seq_along(ini_reg2)) {ini_reg2[[i]]$region <- names(ini_reg2)[i]}
+ini_act2 <- lapply(d_ini2, function(x) x[, .(md = quantile(fageI, probs = 0.5), lower = quantile(fageI, probs = 0.25), upper = quantile(fageI, probs = 0.75)), fyearI])
+for (i in seq_along(ini_act2)) {ini_act2[[i]]$region <- names(ini_act2)[i]}
+
+ini_reg2 <- rbindlist(ini_reg2)
+ini_act2 <- rbindlist(ini_act2)
+
 #  :::::::::::::::::::::
 #  duration of injecting
 #  .....................
@@ -240,7 +248,7 @@ id$n[is.na(id$n)] <- 0L
 id <- id[, .(N = sum(n)), year][id, on = 'year']
 id[, pc := n / N]
 id <- id[injdurI <= 40 & year >= ndy[1]]
-fwrite(id[, c('year', 'injdurI', 'pc')], 'uam_histogram_dur_2oct2021.csv')
+fwrite(id[, c('year', 'injdurI', 'pc')], 'uam_histogram_dur_1april2022.csv')
 
 # -- percentage by initiation year --
 
@@ -250,7 +258,7 @@ iy$n[is.na(iy$n)] <- 0L
 iy <- iy[, .(N = sum(n)), year][iy, on = 'year']
 iy[, pc := n / N]
 iy <- iy[fyearI >= 1970 & fyearI <= year & year >= ndy[1]]
-fwrite(iy[, c('year', 'fyearI', 'pc')], 'uam_histogram_yearInit_2oct2021.csv')
+fwrite(iy[, c('year', 'fyearI', 'pc')], 'uam_histogram_yearInit_1april2022.csv')
 
 # -- duration by region --
 
@@ -273,24 +281,50 @@ dur_act <- rbindlist(dur_act)
 
 age_reg[, parameter := 'age']
 ini_reg[, parameter := 'age_init']
+ini_reg2[, parameter := 'age_init_whole_sample']
 setnames(ini_reg, 'fyearI', 'year')
+setnames(ini_reg2, 'fyearI', 'year')
 dur_reg[, parameter := 'dur']
-reg_results <- rbind(age_reg, ini_reg, dur_reg)
+reg_results <- rbind(age_reg, ini_reg, ini_reg2, dur_reg)
 
 age_act[, parameter := 'age']
 ini_act[, parameter := 'age_init']
+ini_act2[, parameter := 'age_init_whole_sample']
 setnames(ini_act, 'fyearI', 'year')
+setnames(ini_act2, 'fyearI', 'year')
 dur_act[, parameter := 'dur']
-act_results <- rbind(age_act, ini_act, dur_act)
+act_results <- rbind(age_act, ini_act, ini_act2, dur_act)
 
-fwrite(reg_results, 'uam_modelled_quantiles_2oct2021.csv')
-fwrite(act_results, 'uam_actual_quantiles_2oct2021.csv')
+fwrite(reg_results, 'uam_modelled_quantiles_1april2022.csv')
+fwrite(act_results, 'uam_actual_quantiles_1april2022.csv')
+
+#  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  sensitivity excluding those reporting previous participation
+#  ............................................................
+
+prevPartSens <- function (d, outcome = 'ageI', exposure = 'year', label = 'age') {
+  a <- qm(d = d, outcome = outcome, exposure = exposure, q = 0.5, sample = T)
+  a$sens <- 'all'
+  b <- qm(d = d[spit != 'Yes'], outcome = outcome, exposure = exposure, q = 0.5, sample = T)
+  b$sens <- 'new'
+  d <- qm(d = d[spit == 'Yes'], outcome = outcome, exposure = exposure, q = 0.5, sample = T)
+  d$sens <- 'prev'
+  p <- rbind(a, b, d)
+  p$label <- label
+  p
+}
+
+ageSpitSens <- prevPartSens(d = d, outcome = 'ageI', exposure = 'year', label = 'age')
+durSpitSens <- prevPartSens(d = d, outcome = 'injdurI', exposure = 'year', label = 'dur')
+iniSpitSens <- prevPartSens(d = d[(year - fyearI) <= 3], outcome = 'fageI', exposure = 'fyearI', label = 'ini')
+names(iniSpitSens)[1] <- 'year'
+save(ageSpitSens, durSpitSens, iniSpitSens, file = 'previousParticipationSensitivities_1april2022.Rdata')
 
 #  ::::::::::::::::::::::::::::::::::::::::::::
 #  pairwise ratios for modeling of cohort sizes
 #  ............................................
 
-pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff), minSurveyYear = 1990, name = NA, printProgress = T) {
+pairwise_bs_variance <- function(decay = 15, B = 10, region = unique(d$govoff), minSurveyYear = 1990, name = NA, printProgress = T) {
   
   if (printProgress) {print(name)}
   
@@ -302,7 +336,8 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
     y <- y[y2 > y1]
     y <- data.table(y1 = x$fyearI, n1 = x$N)[y, on = 'y1']
     y <- data.table(y2 = x$fyearI, n2 = x$N)[y, on = 'y2']
-    y[, half := (1-decay)^(y2-y1)]
+    y[, half := exp(-(y2-y1)/decay)] # exponential decay function
+    # y[, half := (1-decay)^(y2-y1)] # previous function where 1/15 stop per year
     y[, n1_rescale := n1/half]
     y[, ratio := n2 / n1_rescale]
     y[, syear := z]
@@ -324,7 +359,8 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
     y <- data.table(y1 = x$fyearI, n1 = x$N, b = x$b)[y, on = c('y1', 'b')]
     y <- data.table(y2 = x$fyearI, n2 = x$N, b = x$b)[y, on = c('y2', 'b')]
     y <- y[!is.na(n1) & !is.na(n2)]
-    y[, half := (1-decay)^(y2-y1)]
+    y[, half := exp(-(y2-y1)/decay)] # exponential decay function
+    # y[, half := (1-decay)^(y2-y1)] # previous function where 1/15 stop per year
     y[, n1_rescale := n1/half]
     y[, ratio := n2 / n1_rescale]
     y[, logratio := log(ratio)]
@@ -341,15 +377,15 @@ pairwise_bs_variance <- function(decay = 1/15, B = 10, region = unique(d$govoff)
 # input values
 # first regions, then England, then England 2008, then decay values
 
-decay_values <- 1/(10:20)
+decay_values <- 10:20
 regions <- d[!is.na(govoff), unique(govoff)]
 regions_england <- regions[!(regions %in% c('Wales', 'Northern Ireland'))]
 
 regions_input <- c(as.list(regions_england), rep(list(regions_england), length(decay_values) + 2))
-decay_input <- c(rep(1/15, length(regions_england)+2), decay_values)
+decay_input <- c(rep(15, length(regions_england)+2), decay_values)
 minYear_input <- c(rep(1990, length(regions_england) + 1), 2008, rep(1990, length(decay_values))) 
 
-names_input <- c(regions_england, 'England', 'England2008', paste0('1/', 10:20))
+names_input <- c(regions_england, 'England', 'England2008', decay_values)
 
 # bootstrap pairwise ratios and variances
 
@@ -361,7 +397,7 @@ bs <- mapply(pairwise_bs_variance,
              name = names_input,
              B = 1000L,
              SIMPLIFY = F)
-for(i in seq_along(bs)) {bs[[i]]$decay <- 1/decay_input[i]}
+for(i in seq_along(bs)) {bs[[i]]$decay <- decay_input[i]}
 for(i in seq_along(bs)) {bs[[i]]$minYear <- minYear_input[i]}
 for(i in seq_along(bs)) {bs[[i]]$region <- names_input[i]}
 bs <- rbindlist(bs)
@@ -381,4 +417,4 @@ weighted_ratio[, ratio := exp(logratio)]
 weighted_ratio[, ratio_lci := exp(logratio - qnorm(0.975) * sqrt(var_log_ratio))]
 weighted_ratio[, ratio_uci := exp(logratio + qnorm(0.975) * sqrt(var_log_ratio))]
 
-fwrite(weighted_ratio, 'uam_pairwise_ratios_6oct2021.csv')
+fwrite(weighted_ratio, 'uam_pairwise_ratios_1april2022.csv')
