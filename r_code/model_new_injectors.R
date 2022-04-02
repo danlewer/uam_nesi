@@ -270,7 +270,7 @@ find_multiple_cohorts <- function(ratio_matrix, log.target, log.target.sd, targe
   # rebuild size of new cohorts
   rep(vals1980, each = length(1980:2019)) * ratio_matrix
 }
-  
+
 # # -- This code takes a long time to run, so the results are saved as an 'Rdata' object and loaded
 # set.seed(29)
 # mc_cohort <- lapply(targets2$label, function (x) {
@@ -327,7 +327,7 @@ ymax <- 2500
 yoff <- (seq_along(panels) - 1) * ymax
 ygrids <- 1:4 * 500
 
-cairo_pdf('cohort_sizes_1april2022.pdf', width = 10, height = 9, family = 'Corbel')
+cairo_pdf('Figure4.pdf', width = 10, height = 9, family = 'Corbel')
 
 layout(matrix(1:2, ncol = 2), widths = c(4, 2))
 par(mar = c(0, 0, 0, 0), oma = c(4, 5, 0, 4), xpd = NA)
@@ -473,14 +473,15 @@ for(i in as.character(1990:2019)) {
 
 # -- plot --- 
 
-emf('sensitivity_survey_years_included_1april2022.emf', height = 8, width = 15, family = 'Candara')
+emf('sensitivity_survey_years_included_1april2022.emf', height = 12, width = 8, family = 'Candara')
 
-par(mar = c(5, 3, 1, 12), xpd = NA, mfrow = c(1, 2), oma = c(0, 3, 0, 0))
+par(mar = c(5, 3, 1, 12), xpd = NA, mfrow = c(2, 1), oma = c(0, 3, 0, 0))
 
 cols <- colorRampPalette(c(brewer.pal(3, 'Set1')[1], 'yellow', brewer.pal(3, 'Set1')[2]))(30)
 
 plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(0, 15000), axes = F, xlab = NA, ylab = NA)
-rect(1980, 0, 2019, 15000)
+segments(1980, 15000, x1 = 2019)
+segments(2019, 0, y1 = 15000)
 axis(1, 1980:2019, pos = 0, labels = F, tck = -0.01)
 axis(1, 1980 + 5 * 0:7, pos = 0, tck = -0.02)
 axis(2, 0:5 * 3000, labels = prettyNum(0:5 * 3000, big.mark = ','), pos = 1980, las = 2)
@@ -505,7 +506,8 @@ cols <- brewer.pal(3, 'Set1')[1:2]
 cols2 <- add.alpha(cols, 0.2)
 
 plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(0, 15000), axes = F, xlab = NA, ylab = NA)
-rect(1980, 0, 2019, 15000)
+segments(1980, 15000, x1 = 2019)
+segments(2019, 0, y1 = 15000)
 axis(1, 1980:2019, pos = 0, labels = F, tck = -0.01)
 axis(1, 1980 + 5 * 0:7, pos = 0, tck = -0.02)
 axis(2, 0:5 * 3000, labels = prettyNum(0:5 * 3000, big.mark = ','), pos = 1980, las = 2)
