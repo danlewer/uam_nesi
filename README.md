@@ -8,3 +8,4 @@
 3. R code for processing summary tables (these scripts read data directly from Github):
     * [Analysis of distribution of age, duration, and age at initiation](https://github.com/danlewer/uam_nesi/blob/main/r_code/plots_and_summaries.R)
     * [Modelled estimates of numbers starting injecting each year](https://github.com/danlewer/uam_nesi/blob/main/r_code/model_new_injectors.R)
+    * [Additional sensitivity analyses](https://github.com/danlewer/uam_nesi/blob/main/r_code/additional_sensitivity_analyses.R) that were done during peer review but not included in the published article.
