@@ -20,8 +20,8 @@ ratios_nesi[, survey := 'nesi']
 ratios <- rbind(ratios_uam, ratios_nesi)
 ratios_england <- ratios[region == 'England' & decay == 15]
 
-#  heatmap of pairwise ratios
-#  ..........................
+#  heatmap of pairwise ratios (for Supplementary Information)
+#  ..........................................................
 
 cols_red <- colorRampPalette(brewer.pal(9, 'Reds'))(100)
 cols_blue <- rev(colorRampPalette(brewer.pal(9, 'Blues'))(100))
@@ -42,7 +42,7 @@ neg_height <- ys_height * (-neg_range[2] / total_rr)
 ys_neg <- seq(1981, 1981 + neg_height, length.out = 101)
 ys_pos <- seq(1981 + neg_height, 2020, length.out = 101)
 
-emf('new_initiator_ratio_heatmap_1april2022.emf', height = 7, width = 9, family = 'Candara')
+emf('new_initiator_ratio_heatmap.emf', height = 7, width = 9, family = 'Candara')
 
 par(xpd = NA, mar = c(4, 4, 2, 8))
 plot(1, type = 'n', xlim = c(1980, 2019), ylim = c(1980, 2020), axes = F, xlab = NA, ylab = NA)
@@ -96,14 +96,14 @@ set.seed(811)
 mc_results_startYear <- lapply(split(ratios_uam_startYear, ratios_uam_startYear$startYear), mc)
 mc_estimates_startYear <- lapply(mc_results_startYear, function (x) apply(x, 1, quantile, probs = c(0.025, 0.5, 0.975), na.rm = T))
 
-#  plot of main scenario
-#  .....................
+#  plot of main scenario (for Supplementary Information)
+#  .....................................................
 
 cols <- brewer.pal(3, 'Set1')[1:2]
 cols2 <- add.alpha(cols, 0.2)
 rrs <- c(0.1, 0.2, 0.4, 0.7, 1, 2, 3, 5)
 
-emf('main_scenario_ratio_1980_1april2022.emf', height = 5, width = 8, family = 'Candara')
+emf('main_scenario_ratio_1980.emf', height = 5, width = 8, family = 'Candara')
 
 par(mar = c(4, 4, 0, 11), xpd = NA)
 plot(1, type = 'n', xlim = c(1980, 2019), ylim = range(log(rrs)), axes = F, xlab = NA, ylab = NA)
@@ -132,8 +132,8 @@ text(2022.5, ys[c(2, 5)], c('NESI (Scotland)', 'UAM (England, Wales &\nNorthern 
 
 dev.off()
 
-#  plot of sensitivity analyses on lambda
-#  ......................................
+#  plot of sensitivity analyses on lambda (for Supplementary Information)
+#  ......................................................................
 
 cols <- colorRampPalette(c('blue', 'red'))(length(10:20))
 rrs <- c(0.05, 0.1, 0.2, 0.4, 0.7, 1, 2, 3)
@@ -142,7 +142,7 @@ nesi_sens <- mc_estimates[paste0('nesi_1/', 10:20)]
 uam_final_values <- sapply(uam_sens, function(x) x[2,40])
 nesi_final_values <- sapply(nesi_sens, function(x) x[2,40])
 
-emf('lambda_sensitivty_analysis_1april2022.emf', height = 12, width = 7, family = 'Candara')
+emf('lambda_sensitivty_analysis.emf', height = 12, width = 7, family = 'Candara')
 
 par(mfrow = c(2, 1), mar = c(4, 4, 0, 6), xpd = NA)
 
@@ -439,9 +439,9 @@ si_absolute <- cbind(year = 1980:2019, as.data.frame.matrix(si_absolute))
 
 fwrite(si_absolute, 'absolute_numbers_1april2022.csv')
 
-#  :::::::::::::::::::::::::::::::::::::::::
-#  plot of senstivities by survey start year
-#  .........................................
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  plot of senstivities by survey start year (for Supplementary Information)
+#  .........................................................................
 
 # # -- This code takes a long time to run, so the results are saved as an 'Rdata' object and loaded
 # set.seed(127)
