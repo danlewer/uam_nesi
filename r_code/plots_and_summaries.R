@@ -88,25 +88,27 @@ regions <- setdiff(regions, 'Northern Ireland')
 act <- split(act, f = act$region)
 reg <- split(reg, f = reg$region)
 
-#  :::::::::::::::::::::
-#  panel plots by region
-#  .....................
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  panel plots by region (for Supplementary Information)
+#  .....................................................
 
-emf('age_by_region_panel_19jan2021.emf', height = 8, width = 8, family = 'Candara')
+emf('age_by_region_panel.emf', height = 8, width = 8, family = 'Candara')
 panel_plots(parm = 'age', YLIM = c(20, 50), ndy = 1990:2019)
 dev.off()
 
-emf('age_initiation_panel_19jan2021.emf', height = 8, width = 8, family = 'Candara')
+emf('age_initiation_panel.emf', height = 8, width = 8, family = 'Candara')
 panel_plots(parm = 'age_init', YLIM = c(15, 45), ndy = 1990:2019, YLAB = 'Age first injected', XLAB = 'Year first injected')
 dev.off()
 
-emf('duration_injecting_by_region_panel_19jan2021.emf', height = 8, width = 8, family = 'Candara')
+emf('duration_injecting_by_region_panel.emf', height = 8, width = 8, family = 'Candara')
 panel_plots(parm = 'dur', YLIM = c(0, 25), ndy = 1990:2019, YLAB = 'Duration of injecting')
 dev.off()
 
 #  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #  effect of limiting to those initiated in past 3 years on age of initiation
 #  ..........................................................................
+
+# this is a sensitivity analysis that was reported during peer review but is not included in the published article
 
 sampleInit <- dcast(act$England[parameter %in% c('age_init_whole_sample', 'age_init') & year >= 1990], year ~ parameter, value.var = 'md')
 sampleInit[, age_init := age_init + 0.1]
@@ -115,7 +117,7 @@ modelInit <- dcast(reg$England[parameter %in% c('age_init_whole_sample', 'age_in
 
 cols <- brewer.pal(3, 'Set1')
 
-emf('age_of_initiation_whole_vs_past3year_19jan2022.emf', height = 5, width = 6, family = 'Candara')
+emf('age_of_initiation_whole_vs_past3year.emf', height = 5, width = 6, family = 'Candara')
 
 plot(1, type = 'n', xlim = c(1990, 2019), ylim = c(18, 35), xlab = NA, ylab = NA, axes = F)
 rect(1989, 18, 2020, 35)
@@ -134,34 +136,26 @@ title(ylab = 'Age of initiation')
 
 dev.off()
 
-#  :::::::::::::::::::::::::::::::::::::::::::::::::::
-#  difference between population and age of initiation
-#  ...................................................
-
-compare_age_ini <- dcast(rbindlist(reg)[tau == 0.5], year + region ~ parameter, value.var = 'fit')
-compare_age_ini <- compare_age_ini[region %in% c('England', 'Scotland'), -'dur']
-compare_age_ini[, dif := age - age_init]
-
 #  :::::::::::::::::::::::::::::::::::
 #  miscellaneous values for manuscript
 #  ...................................
 
+# median age in 1990, 2008, and 2019
 dcast(reg$England[parameter == 'age' & year %in% c(1990, 2008, 2019)], year ~ tau, value.var = 'fit')
 dcast(reg$Scotland[parameter == 'age' & year %in% c(1990, 2008, 2019)], year ~ tau, value.var = 'fit')
-
 rbindlist(reg)[year == 2019 & parameter == 'age' & tau == 0.5][order(fit)]
+dcast(rbindlist(reg)[year == 2019 & parameter == 'age'], region ~ tau, value.var = 'fit')[order(`0.5`)]
 
+# median age of initiation in 1990, 2008, and 2019
 dcast(reg$England[parameter == 'age_init' & year %in% c(1990, 2008, 2019)], year ~ tau, value.var = 'fit')
 dcast(reg$Scotland[parameter == 'age_init' & year %in% c(1990, 2008, 2019)], year ~ tau, value.var = 'fit')
-
 rbindlist(reg)[year == 2019 & parameter == 'age_init' & tau == 0.5][order(fit)]
 
+# median duration of injecting in 1990, 2008, and 2019
 dcast(reg$England[parameter == 'dur' & year %in% c(1990, 2008, 2019)], year ~ tau, value.var = 'fit')
 dcast(reg$Scotland[parameter == 'dur' & year %in% c(1990, 2008, 2019)], year ~ tau, value.var = 'fit')
-
 rbindlist(reg)[year == 2019 & parameter == 'dur' & tau == 0.5][order(fit)]
 
-dcast(rbindlist(reg)[year == 2019 & parameter == 'age'], region ~ tau, value.var = 'fit')[order(`0.5`)]
 
 #  :::::::::::::::::::::::::::::::::::::
 #  histograms of duration by survey year
@@ -298,7 +292,7 @@ pf <- function(actual = act, modelled = reg, parm = 'age', xlim = c(1993, 2019),
 
 cols <- brewer.pal(3, 'Set1')[2:3]
 
-cairo_pdf('age_initiation_duration_7oct2021.pdf', height = 3.5, width = 8, family = 'Corbel')
+cairo_pdf('Figure2.pdf', height = 3.5, width = 8, family = 'Corbel')
 
 layout(m = matrix(1:4, ncol = 4), widths = c(3, 3, 3, 3))
 par(mar = c(3, 2, 3, 0), xpd = NA)
@@ -327,6 +321,8 @@ dev.off()
 #  sensitivity analysis by averaging regional results
 #  ..................................................
 
+# this is a sensitivity analysis that was reported during peer review but is not included in the published article
+
 parms <- c('age', 'age_init', 'dur')
 
 sens_regions <- reg_uam[!(region %in% c('England', 'Wales', 'Northern Ireland')) & tau == 0.5 & parameter != 'age_init_whole_sample', .(mean_reg = mean(fit)), c('year', 'parameter')][
@@ -336,7 +332,7 @@ sens_regions <- split(sens_regions, f = sens_regions$parameter)
 
 cols <- brewer.pal(3, 'Set1')
 
-emf('sensitivity_averaging_regions_20jan2022.emf', height = 4, width = 9, family = 'Candara')
+emf('sensitivity_averaging_regions.emf', height = 4, width = 9, family = 'Candara')
 
 par(mfrow = c(1, 3))
 lapply(sens_regions, function (x) {
