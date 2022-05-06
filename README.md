@@ -1,7 +1,7 @@
 # Analysis of demographic changes among people who inject illicit drugs in the UK
 
 ## Introduction
-This repository includes code and data associated with the following study:
+This repository includes code and data associated with the following article:
 
 Lewer D, Croxford S, Desai M, Emanuel E, Hope VD, McAuley A, Phipps E, Tweed EJ. The characteristics of people who inject drugs in the United Kingdom: changes in age, duration, and incidence of injecting, 1980–2019, using evidence from repeated cross-sectional surveys. Addiction. 2022. https://doi.org/10.1111/add.15911
 
