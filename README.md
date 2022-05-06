@@ -10,6 +10,7 @@ Lewer D, Croxford S, Desai M, Emanuel E, Hope VD, McAuley A, Phipps E, Tweed EJ.
 2. Processed non-identifiable summary data:
     * [Histograms](https://github.com/danlewer/uam_nesi/tree/main/histogram) of duration of injecting by survey year.
     * [Quantiles of age, duration, and age at initiation](https://github.com/danlewer/uam_nesi/tree/main/quantiles), both observed and modelled.
+    * [Ratios of people starting for the first time by survey year](https://github.com/danlewer/uam_nesi/tree/main/ratios_of_new_initiators), to inform modelling of the number of people starting injecting each year. The folder also include intermediate results in .Rdata format from part of the R code that takes a long time to run. This part of the R code is commented-out, and then the .Rdata files are loaded.
 3. R code for processing summary tables (these scripts read data directly from Github):
     * [Analysis of distribution of age, duration, and age at initiation](https://github.com/danlewer/uam_nesi/blob/main/r_code/plots_and_summaries.R)
     * [Modelled estimates of numbers starting injecting each year](https://github.com/danlewer/uam_nesi/blob/main/r_code/model_new_injectors.R)
