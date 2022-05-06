@@ -3,6 +3,8 @@
 ## Introduction
 This repository includes code and data associated with the following study:
 
+Lewer D, Croxford S, Desai M, Emanuel E, Hope VD, McAuley A, Phipps E, Tweed EJ. The characteristics of people who inject drugs in the United Kingdom: changes in age, duration, and incidence of injecting, 1980–2019, using evidence from repeated cross-sectional surveys. Addiction. 2022. https://doi.org/10.1111/add.15911
+
 ## Abstract
 
 **Background and aims**. Mortality and drug treatment data suggest that people who inject drugs are getting older. We aimed to describe changes in the characteristics of people injecting drugs in the United Kingdom (UK).  
